@@ -1,0 +1,115 @@
+2016-09-12 16:13:59 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_2bde2a4d784e]]></ToUserName>
+<FromUserName><![CDATA[oxmO9vmKXFSY30njvJsF4NXj2w9o]]></FromUserName>
+<CreateTime>1473668039</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[unsubscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2016-09-12 16:14:23 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_2bde2a4d784e]]></ToUserName>
+<FromUserName><![CDATA[oxmO9vmKXFSY30njvJsF4NXj2w9o]]></FromUserName>
+<CreateTime>1473668062</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2016-09-12 16:14:23 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_2bde2a4d784e',
+    'fromusername' => 'oxmO9vmKXFSY30njvJsF4NXj2w9o',
+    'createtime' => '1473668062',
+    'msgtype' => 'event',
+    'event' => 'subscribe',
+    'eventkey' => '',
+    'from' => 'oxmO9vmKXFSY30njvJsF4NXj2w9o',
+    'to' => 'gh_2bde2a4d784e',
+    'time' => '1473668062',
+    'type' => 'text',
+    'redirection' => true,
+    'source' => 'subscribe',
+    'content' => '/擦汗 欢迎关注我的公众号！',
+  ),
+)
+
+2016-09-12 16:14:23 response :
+------------
+
+2016-09-12 16:16:50 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_2bde2a4d784e]]></ToUserName>
+<FromUserName><![CDATA[oxmO9vmKXFSY30njvJsF4NXj2w9o]]></FromUserName>
+<CreateTime>1473668210</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[unsubscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2016-09-12 16:17:27 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_2bde2a4d784e]]></ToUserName>
+<FromUserName><![CDATA[oxmO9vmKXFSY30njvJsF4NXj2w9o]]></FromUserName>
+<CreateTime>1473668247</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2016-09-12 16:17:27 params :
+------------
+String:
+array (
+  'message' => 
+  array (
+    'tousername' => 'gh_2bde2a4d784e',
+    'fromusername' => 'oxmO9vmKXFSY30njvJsF4NXj2w9o',
+    'createtime' => '1473668247',
+    'msgtype' => 'event',
+    'event' => 'subscribe',
+    'eventkey' => '',
+    'from' => 'oxmO9vmKXFSY30njvJsF4NXj2w9o',
+    'to' => 'gh_2bde2a4d784e',
+    'time' => '1473668247',
+    'type' => 'text',
+    'redirection' => true,
+    'source' => 'subscribe',
+    'content' => '关注',
+  ),
+  'module' => 'basic',
+  'rule' => '9',
+  'priority' => '0',
+  'keyword' => 
+  array (
+    'id' => '13',
+    'rid' => '9',
+    'uniacid' => '1',
+    'module' => 'basic',
+    'content' => '关注',
+    'type' => '1',
+    'displayorder' => '0',
+    'status' => '1',
+  ),
+)
+
+2016-09-12 16:17:27 response :
+------------
+Array:
+FromUserName : gh_2bde2a4d784e ;
+ToUserName : oxmO9vmKXFSY30njvJsF4NXj2w9o ;
+MsgType : text ;
+Content : /擦汗 欢迎关注我的公众号！ ;
+
