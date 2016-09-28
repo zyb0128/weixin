@@ -279,9 +279,9 @@ class RechargeModuleSite extends WeModuleSite {
 		}
 				if ($params['from'] == 'return') {
 			if ($params['result'] == 'success') {
-				message('支付成功！', $_W['siteroot'] . '../../app/' . $url, 'success');
+				message('支付成功！', $_W['siteroot'] . 'app/' . $url, 'success');
 			} else {
-				message('支付失败！', $_W['siteroot'] . '../../app/' . $url, 'error');
+				message('支付失败！', $_W['siteroot'] . 'app/' . $url, 'error');
 			}
 		}
 	}

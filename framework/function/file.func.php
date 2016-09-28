@@ -228,7 +228,7 @@ function file_remote_upload($filename, $auto_delete_local = true) {
 			return error(1, '远程附件上传失败，请检查配置并重新上传');
 		}
 	} elseif ($_W['setting']['remote']['type'] == '2') {
-		require_once('../framework/library/alioss/autoload.php');
+		require_once(IA_ROOT.'/framework/library/alioss/autoload.php');
 		load()->model('attachment');
 		$buckets = attachment_alioss_buctkets($_W['setting']['remote']['alioss']['key'], $_W['setting']['remote']['alioss']['secret']);
 		$endpoint = 'http://'.$buckets[$_W['setting']['remote']['alioss']['bucket']]['location'].'.aliyuncs.com';
@@ -330,12 +330,14 @@ function file_remote_delete($file) {
 			return error(1, '删除附件失败，请检查配置并重新删除');
 		}
 	} elseif ($_W['setting']['remote']['type'] == '2') {
-		require_once(IA_ROOT . '/framework/library/alioss/sdk.class.php');
-		$oss = new ALIOSS($_W['setting']['remote']['alioss']['key'], $_W['setting']['remote']['alioss']['secret'], $_W['setting']['remote']['alioss']['ossurl']);
-		$response = $oss->delete_object($_W['setting']['remote']['alioss']['bucket'], $file);
-		if ($response->status == 204) {
-			return true;
-		} else {
+		load()->model('attachment');
+		require_once(IA_ROOT.'/framework/library/alioss/autoload.php');
+		$buckets = attachment_alioss_buctkets($_W['setting']['remote']['alioss']['key'], $_W['setting']['remote']['alioss']['secret']);
+		$endpoint = 'http://'.$buckets[$_W['setting']['remote']['alioss']['bucket']]['location'].'.aliyuncs.com';
+		try {
+			$ossClient = new \OSS\OssClient($_W['setting']['remote']['alioss']['key'], $_W['setting']['remote']['alioss']['secret'], $endpoint);
+			$ossClient->deleteObject($_W['setting']['remote']['alioss']['bucket'], $file);
+		} catch (\OSS\Core\OssException $e) {
 			return error(1, '删除oss远程文件失败');
 		}
 	}  elseif ($_W['setting']['remote']['type'] == '3') {

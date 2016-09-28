@@ -218,7 +218,13 @@ function activity_coupon_grant($id,$openid) {
 		return error(-1, '未找到指定卡券');
 	}
 	elseif (empty($group) && !empty($coupon_group)) {
-		return error(-1, '无权限兑换');
+		if (!empty($fan_groups)) {
+			return error(-1, '无权限兑换');
+		} else {
+			if (is_array($coupon_group) && !in_array('0', $coupon_group)) {
+				return error(-1, '无权限兑换');
+			}
+		}
 	}
 	elseif (strtotime(str_replace('.', '-', $coupon['date_info']['time_limit_end'])) < strtotime(date('Y-m-d')) && $coupon['date_info']['time_type'] != 2) {
 		return error(-1, '活动已结束');
@@ -229,7 +235,7 @@ function activity_coupon_grant($id,$openid) {
 	elseif ($pcount >= $coupon['get_limit'] && !empty($coupon['get_limit'])) {
 		return error(-1, '数量超限');
 	}
-	elseif (!empty($coupon['modules']) && !in_array($_W['current_module']['name'], array_keys($coupon['modules'])) && ($_GPC['c'] != 'activity' || $_GPC['c'] != 'mc' )) {
+	elseif (!empty($coupon['modules']) && !in_array($_W['current_module']['name'], array_keys($coupon['modules'])) && ($_GPC['c'] != 'activity' && $_GPC['c'] != 'mc' )) {
 		return error(-1, '该模块没有此卡券发放权限');
 	}
 	$give = $_W['activity_coupon_id'] ? true :false;

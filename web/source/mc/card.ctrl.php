@@ -142,7 +142,7 @@ if($do == 'editor') {
 		if ($grant['credit1'] < 0 || $grant['credit2'] < 0) {
 			message('领卡赠送积分或余额不能为负数', referer(), 'error');
 		}
-		if ($update['offset_rate'] <= 0 || $update['offset_max'] <= 0) {
+		if ($update['offset_rate'] < 0 || $update['offset_max'] < 0) {
 			message('抵现比率的数值不能为负数或零', referer(), 'error');
 		}
 		if($update['discount_type'] != 0 && !empty($activity['discounts'])) {

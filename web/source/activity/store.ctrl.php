@@ -191,12 +191,13 @@ if($do == 'display') {
 	}
 }
 if($do =='delete') {
-	$count = pdo_fetchcolumn('SELECT COUNT(*) FROM ' . tablename('activity_clerks') . ' WHERE uniacid = :uniacid AND storeid = :id', array(':id' => $_GPC['id'], ':uniacid' => $_W['uniacid']));
+	$id = intval($_GPC['id']);
+	$count = pdo_fetchcolumn('SELECT COUNT(*) FROM ' . tablename('activity_clerks') . ' WHERE uniacid = :uniacid AND storeid = :id', array(':id' => $id, ':uniacid' => $_W['uniacid']));
 	$count = intval($count);
 	if($count > 0) {
 		message("该门店下有{$count}名店员.请将店员变更到其他门店后,再进行删除操作", referer(), 'error');
 	}
-	pdo_delete('activity_stores',array('id' => $_GPC['id'], 'uniacid' => $_W['uniacid']));
+	pdo_delete('activity_stores',array('id' => $id, 'uniacid' => $_W['uniacid']));
 	if (COUPON_TYPE == WECHAT_COUPON) {
 		$location = pdo_fetch('SELECT status,location_id FROM ' . tablename('activity_stores') . ' WHERE uniacid = :aid AND id = :id', array(':aid' => $_W['uniacid'], ':id' => $id));
 		if(!empty($location['location_id'])) {

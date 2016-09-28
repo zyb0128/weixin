@@ -49,8 +49,16 @@ function mc_update($uid, $fields) {
 	$struct[] = 'residecity';
 	$struct[] = 'residedist';
 	$struct[] = 'groupid';
-
-	if (isset($fields['birth'])) {
+	
+	if (isset($fields['birth']) && !is_array($fields['birth'])) {
+		$birth = explode('-', $fields['birth']);
+		$fields['birth'] = array(
+			'year' => $birth[0],
+			'month' => $birth[1],
+			'day' => $birth[2],
+		);
+	}
+	if (!empty($fields['birth'])) {
 		$fields['birthyear'] = $fields['birth']['year'];
 		$fields['birthmonth'] = $fields['birth']['month'];
 		$fields['birthday'] = $fields['birth']['day'];

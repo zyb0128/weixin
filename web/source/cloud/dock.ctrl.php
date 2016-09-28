@@ -91,7 +91,7 @@ if($do == 'download') {
 		@mkdirs(dirname($path));
 		file_put_contents($path, $file);
 		$sign = md5(md5_file($path) . $ret['path'] . $_W['setting']['site']['token']);
-		if($ret['sign'] == $sign) {
+		if($ret['sign'] === $sign) {
 			exit('success');
 		}
 	}

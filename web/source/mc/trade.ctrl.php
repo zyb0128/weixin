@@ -53,7 +53,7 @@ if($do == 'user') {
 		}
 		$html = "姓名:{$user['realname']},会员组:{$user['groupname']}<br>";
 		$html .= "{$user['discount_cn']}<br>";
-		$html .= "余额:{$user['credit2']}元,积分:{$user['credit1']},贡献:{$user['credit6']}<br>";
+		$html .= "余额:{$user['credit2']}元,积分:{$user['credit1']}<br>";
 
 		if(!empty($card) && $card['offset_rate'] > 0 && $card['offset_max'] > 0) {
 			$html .= "{$card['offset_rate']}积分可抵消1元。最多可抵消{$card['offset_max']}元";

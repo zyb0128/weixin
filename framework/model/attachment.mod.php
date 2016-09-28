@@ -14,7 +14,7 @@ function attachment_alioss_datacenters() {
 
 
 function attachment_newalioss_auth($key, $secret, $bucket){
-	require_once('../framework/library/alioss/autoload.php');
+	require_once(IA_ROOT.'/framework/library/alioss/autoload.php');
 	$buckets = attachment_alioss_buctkets($key, $secret);
 	$url = 'http://'.$buckets[$bucket]['location'].'.aliyuncs.com';
 	$filename = 'MicroEngine.ico';
@@ -28,7 +28,7 @@ function attachment_newalioss_auth($key, $secret, $bucket){
 }
 
 function attachment_alioss_buctkets($key, $secret) {
-	require_once('../framework/library/alioss/autoload.php');
+	require_once(IA_ROOT.'/framework/library/alioss/autoload.php');
 	$url = 'http://oss-cn-beijing.aliyuncs.com';
 	try {
 		$ossClient = new \OSS\OssClient($key, $secret, $url);
@@ -90,7 +90,7 @@ function attachment_qiniu_auth($key, $secret,$bucket, $district) {
 	}
 }
 function attachment_cos_auth($bucket,$appid, $key, $secret) {
-	require(IA_ROOT.'/framework/library/cos/include.php');
+	require_once(IA_ROOT.'/framework/library/cos/include.php');
 	$con = file_get_contents(IA_ROOT.'/framework/library/cos/Qcloud_cos/Conf.php');
 	$con = preg_replace('/const[\s]APPID[\s]=[\s]\'.*\';/', 'const APPID = \''.$appid.'\';', $con);
 	$con = preg_replace('/const[\s]SECRET_ID[\s]=[\s]\'.*\';/', 'const SECRET_ID = \''.$key.'\';', $con);

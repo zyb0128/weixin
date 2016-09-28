@@ -54,6 +54,7 @@ if($do != 'module') {
 	if (is_error($entry)) {
 		message('模块菜单不存在或是模块已经被删除');
 	}
+	$module = module_fetch($entry['module']);
 	$cover['title'] = $entry['title'];
 		define('FRAME', 'ext');
 	$types = module_types();

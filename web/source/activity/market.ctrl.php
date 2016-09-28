@@ -114,11 +114,17 @@ elseif ($do == 'post') {
 				}
 				$openids = activity_get_member($post['members'][0], $param);
 				$openids = $openids['members'];
+				$account_api = WeAccount::create();
 				foreach ($post['coupons'] as $coupon) {
 					$post['members'] = serialize($post['members']);
 					$post['coupons'] = serialize($post['coupons']);
 					foreach ($openids as $openid) {
 						$result = activity_coupon_grant($coupon, $openid);
+						$coupon_info = activity_coupon_info($coupon);
+						$send['touser'] = $openid;
+						$send['msgtype'] = 'text';
+						$send['text'] = array('content' => urlencode($_W['account']['name'].'赠送了您一张'.$coupon_info['title'].'，请到会员中心查收'));
+						$data = $account_api->sendCustomNotice($send);
 					}
 					$post['msg_id'] = $result['msg_id'];
 					pdo_insert('coupon_activity', $post);

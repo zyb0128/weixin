@@ -87,23 +87,29 @@ if (intval($_W['account']['level']) == 4) {
 				'tag' => base64_encode(iserializer($userinfo))
 			);
 			if (!isset($unisetting['passport']) || empty($unisetting['passport']['focusreg'])) {
-				$default_groupid = pdo_fetchcolumn('SELECT groupid FROM ' .tablename('mc_groups') . ' WHERE uniacid = :uniacid AND isdefault = 1', array(':uniacid' => $_W['uniacid']));
-				$data = array(
-					'uniacid' => $_W['uniacid'],
-					'email' => md5($oauth['openid']).'@we7.cc',
-					'salt' => random(8),
-					'groupid' => $default_groupid,
-					'createtime' => TIMESTAMP,
-					'password' => md5($message['from'] . $data['salt'] . $_W['config']['setting']['authkey']),
-					'nickname' => stripslashes($userinfo['nickname']),
-					'avatar' => $userinfo['headimgurl'],
-					'gender' => $userinfo['sex'],
-					'nationality' => $userinfo['country'],
-					'resideprovince' => $userinfo['province'] . '省',
-					'residecity' => $userinfo['city'] . '市',
-				);
-				pdo_insert('mc_members', $data);
-				$uid = pdo_insertid();
+				$email = md5($oauth['openid']).'@we7.cc';
+				$email_exists_member = pdo_getcolumn('mc_members', array('email' => $email), 'uid');
+				if (!empty($email_exists_member)) {
+					$uid = $email_exists_member;
+				} else {
+					$default_groupid = pdo_fetchcolumn('SELECT groupid FROM ' .tablename('mc_groups') . ' WHERE uniacid = :uniacid AND isdefault = 1', array(':uniacid' => $_W['uniacid']));
+					$data = array(
+						'uniacid' => $_W['uniacid'],
+						'email' => $email,
+						'salt' => random(8),
+						'groupid' => $default_groupid,
+						'createtime' => TIMESTAMP,
+						'password' => md5($message['from'] . $data['salt'] . $_W['config']['setting']['authkey']),
+						'nickname' => stripslashes($userinfo['nickname']),
+						'avatar' => $userinfo['headimgurl'],
+						'gender' => $userinfo['sex'],
+						'nationality' => $userinfo['country'],
+						'resideprovince' => $userinfo['province'] . '省',
+						'residecity' => $userinfo['city'] . '市',
+					);
+					pdo_insert('mc_members', $data);
+					$uid = pdo_insertid();
+				}
 				$record['uid'] = $uid;
 				$_SESSION['uid'] = $uid;
 			}

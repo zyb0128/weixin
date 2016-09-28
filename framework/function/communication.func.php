@@ -24,9 +24,6 @@ function ihttp_request($url, $post = '', $extra = array(), $timeout = 60) {
 	}
 	if (function_exists('curl_init') && function_exists('curl_exec')) {
 		$ch = curl_init();
-				if (ver_compare(phpversion(), '5.6') >= 0) {
-			curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
-		}
 		if (!empty($extra['ip'])) {
 			$extra['Host'] = $urlset['host'];
 			$urlset['host'] = $extra['ip'];
@@ -40,10 +37,12 @@ function ihttp_request($url, $post = '', $extra = array(), $timeout = 60) {
 		if ($post) {
 			if (is_array($post)) {
 				$filepost = false;
-				foreach ($post as $name => $value) {
+								foreach ($post as $name => &$value) {
+					if (ver_compare(phpversion(), '5.6') >= 0 && substr($value, 0, 1) == '@') {
+						$value = new CURLFile(ltrim($value, '@'));
+					}
 					if ((is_string($value) && substr($value, 0, 1) == '@') || (class_exists('CURLFile') && $value instanceof CURLFile)) {
 						$filepost = true;
-						break;
 					}
 				}
 				if (!$filepost) {
@@ -160,7 +159,7 @@ function ihttp_response_parse($data, $chunked = false) {
 	$split1[1] = substr($data, $pos + 4, strlen($data));
 	
 	$split2 = explode("\r\n", $split1[0], 2);
-	preg_match('/^(\S+) (\S+) (\S+)$/', $split2[0], $matches);
+	preg_match('/^(\S+) (\S+) (.*)$/', $split2[0], $matches);
 	$rlt['code'] = $matches[2];
 	$rlt['status'] = $matches[3];
 	$rlt['responseline'] = $split2[0];
@@ -292,6 +291,26 @@ function ihttp_email($to, $subject, $body, $global = false) {
 		$mailer->From = $config['username'];
 		$mailer->FromName = $config['sender'];
 		$mailer->isHTML(true);
+	}
+	if ($body) {
+		if (is_array($body)) {
+			$body = '';
+			foreach($body as $value) {
+				if (substr($value, 0, 1) == '@') {
+					if(!is_file($file = ltrim($value, '@'))){
+						return error(1, $file . ' 附件不存在或非文件！');
+					}
+					$mailer->addAttachment($file);	
+				} else {
+					$body .= $value . '\n';
+				}
+			}
+		} else {
+			if (substr($body, 0, 1) == '@') {
+				$mailer->addAttachment(ltrim($body, '@'));	
+				$body = '';
+			}
+		}
 	}
 	if (!empty($mailer->signature)) {
 		$body .= htmlspecialchars_decode($mailer->signature);

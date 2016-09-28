@@ -219,6 +219,10 @@ if ($do == 'local') {
 	$typeindex = array('image' => 1, 'audio' => 2, 'video' => 3);
 	$condition = ' WHERE uniacid = :uniacid AND type = :type';
 	$params = array(':uniacid' => $_W['uniacid'], ':type' => $typeindex[$type]);
+	if($dest_dir){
+		$condition .= " AND `attachment` LIKE :attachment";	
+		$params[':attachment'] = "%{$dest_dir}%";
+	}
 	$year = intval($_GPC['year']);
 	$month = intval($_GPC['month']);
 	if($year > 0 || $month > 0) {

@@ -29,10 +29,11 @@ if($do == 'verifycode') {
 	echo $content['content'];
 	exit();
 }  elseif($do == 'qrcode') {
-	require_once('../framework/library/qrcode/phpqrcode.php');
+	require_once(IA_ROOT.'/framework/library/qrcode/phpqrcode.php');
 	$errorCorrectionLevel = "L";
 	$matrixPointSize = "8";
 	$text = trim($_GPC['text']);
 	QRcode::png($text, false, $errorCorrectionLevel, $matrixPointSize);
 	exit();
 }
+

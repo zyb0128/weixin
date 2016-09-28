@@ -8,7 +8,11 @@ $dos = array('flow_control', 'finance_info', 'register_flow', 'display', 'accoun
 $do = in_array($do, $dos) ? $do : 'account_list';
 load()->model('cloud');
 load()->func('file');
+$flow_master_info = cloud_flow_master_get();
 $flow_uniaccount_list = cloud_flow_uniaccount_list_get();
+if (isset($flow_master_info['site_key']) && $flow_master_info['site_key'] == '0') {
+	message('请注册站点或者重置站点信息', referer(), 'error');
+}
 $commission_show = false;
 if (!empty($flow_uniaccount_list)) {
 	foreach ($flow_uniaccount_list as $val) {
@@ -22,7 +26,6 @@ if (is_error($status)) {
 	message($status['message'], url('cloud/profile'), 'error');
 }
 if ($do == 'display') {
-	$flow_master_info = cloud_flow_master_get();
 	if ($flow_master_info['status'] == 4 || IMS_FAMILY == 'v') {
 		header('Location:' . url('system/content_provider/account_list'));
 		exit;
@@ -30,7 +33,6 @@ if ($do == 'display') {
 }
 
 if ($do == 'register_flow') {
-	$flow_master_info = cloud_flow_master_get();
 	if (($flow_master_info['status'] == 4 || IMS_FAMILY == 'v') || $flow_master_info['status'] == 2) {
 		message('权限不足', url('system/content_provider/account_list'), 'error');
 	}
@@ -96,7 +98,6 @@ if ($do == 'register_flow') {
 }
 
 if ($do == 'account_list') {
-	$flow_master_info = cloud_flow_master_get();
 	if ($flow_master_info['status'] != 4 && IMS_FAMILY != 'v') {
 		header('Location:' . url('system/content_provider/display'));
 		exit;
@@ -271,7 +272,6 @@ if ($do == 'ad_type_get') {
 }
 
 if ($do == 'finance_info') {
-	$flow_master_info = cloud_flow_master_get();
 	if (empty($commission_show)) {
 		message('权限不足', url('system/content_provider/account_list'), 'error');
 	}

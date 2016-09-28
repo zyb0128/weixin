@@ -41,7 +41,7 @@
 		<li{if $do == 'account_list' || $do == 'display' || $do == 'register_flow' || $do == 'flow_control'} class="active"{/if}>
 			{if $flow_master_info['status'] == 4 || IMS_FAMILY == 'v'}
 			<a href="{php echo url('system/content_provider/account_list');}">流量管理</a>
-			{elseif $flow_master_info['status'] == 2 || $flow_master_info['status'] == 3 || empty($flow_master_info['status'])}
+			{elseif $flow_master_info['status'] != 4}
 			<a href="{php echo url('system/content_provider/display');}">流量管理</a>
 			{/if}
 		</li>
@@ -63,7 +63,7 @@
 				{/if}
 				<span class="help-block">只需简单申请，即可成为流量主，按月获取广告收入。广告资源优质丰富，数据统计精准透明。</span>
 			</div>
-			{if empty($flow_master_info['status']) || $flow_master_info['status'] == 3}
+			{if $flow_master_info['status'] == 1 || $flow_master_info['status'] == 3}
 			<div class="col-xs-5">
 				<span class="pull-right">
 					<a class="btn btn-primary" href="{php echo url('system/content_provider/register_flow')}">申请流量主</a>
