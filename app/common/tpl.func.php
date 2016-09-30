@@ -139,6 +139,9 @@ function tpl_app_form_field_calendar($name, $values = array()) {
 	$value = (empty($values['year']) || empty($values['month']) || empty($values['day'])) ? '' : implode('-', $values);
 	$html = '';
 	$html .= '<input class="mui-calendar-picker" type="text" placeholder="请选择日期" readonly value="' . $value . '" name="' . $name . '" />';
+	$html .= '<input type="hidden" value="' . $values['year'] . '" name="' . $name . '[year]"/>';
+	$html .= '<input type="hidden" value="' . $values['month'] . '" name="' . $name . '[month]"/>';
+	$html .= '<input type="hidden" value="' . $values['day'] . '" name="' . $name . '[day]"/>';
 	if (!defined('TPL_INIT_CALENDAR')) {
 		$html .= '
 			<script type="text/javascript">
