@@ -600,8 +600,18 @@ function mc_account_change_operator($clerk_type, $store_id, $clerk_id) {
 	} elseif($clerk_type == 2) {
 		$data['clerk_cn'] = pdo_fetchcolumn('SELECT username FROM ' . tablename('users') . ' WHERE uid = :uid', array(':uid' => $clerk_id));
 	} elseif($clerk_type == 3) {
-		$data['clerk_cn'] = $clerks[$clerk_id]['name'];
+		if (empty($clerk_id)) {
+			$data['clerk_cn'] = '本人操作';
+		} else {
+			$data['clerk_cn'] = $clerks[$clerk_id]['name'];
+		}	
 		$data['store_cn'] = $stores[$store_id]['business_name'] . ' ' . $stores[$store_id]['branch_name'];
+	}
+	if (empty($data['store_cn'])) {
+		$data['store_cn'] = '暂无门店信息';
+	}
+	if (empty($data['clerk_cn'])) {
+		$data['clerk_cn'] = '暂无操作员信息';
 	}
 	return $data;
 }

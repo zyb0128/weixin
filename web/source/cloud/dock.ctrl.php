@@ -203,7 +203,11 @@ if ($do == 'api.oauth') {
 	$dat = __secure_decode($post);
 	$dat = iunserializer($dat);
 	if(!empty($dat) && is_array($dat)) {
-		$result = file_put_contents(IA_ROOT."/addons/{$dat['module']}/module.cer", $dat['access_token']);
+		if ($dat['module'] == 'core') {
+			$result = file_put_contents(IA_ROOT.'/framework/builtin/core/module.cer', $dat['access_token']);
+		} else {
+			$result = file_put_contents(IA_ROOT."/addons/{$dat['module']}/module.cer", $dat['access_token']);
+		}
 		if ($result !== false) {
 			die('success');
 		}
@@ -220,7 +224,7 @@ function __secure_decode($post) {
 	}
 	$ret = iunserializer($data);
 	$string = ($ret['data'] . $_W['setting']['site']['token']);
-	if(md5($string) == $ret['sign']) {
+	if(md5($string) === $ret['sign']) {
 		return $ret['data'];
 	}
 	return false;

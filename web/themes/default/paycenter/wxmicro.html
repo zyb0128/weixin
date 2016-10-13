@@ -96,6 +96,7 @@
 										<div class="form-group">
 											<h2>刷卡支付</h2>
 											<p>收款金额为<span> {{micro.config.fee}}元</span></p>
+											<p class="js-userpaying" style="display:none;"><span>用户正在支付中</span></p>
 											<input type="text" name="code" class="form-control js-input input-lg" ng-model="micro.config.code" tabindex="4" placeholder="微信刷卡支付授权码(请链接扫码枪扫码)">
 										</div>
 										<div class="form-group">
@@ -255,7 +256,10 @@ $(function(){
 	angular.module('paycenterApp').value('config', {
 		'card_set_str' : '{$card_set_str}',
 		'card_check_url' : '{php echo url('paycenter/card/check')}',
-		'pay_url' : '{php echo url('paycenter/wxmicro/pay')}'
+		'pay_url' : '{php echo url('paycenter/wxmicro/pay')}',
+		'query_url' : '{php echo url('paycenter/wxmicro/query')}',
+		'checkpay_url' : '{php echo url('paycenter/wxmicro/checkpay')}',
+		'redirect_url' : '{php echo url('paycenter/wxmicro')}'
 	});
 	angular.bootstrap(document, ['paycenterApp']);
 });

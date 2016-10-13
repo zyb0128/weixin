@@ -31,13 +31,15 @@ if($do == 'sign_display') {
 	}
 	if (!empty($sign_rules[$total + 1])) {
 		$tomorrow_sign_credit = $sign_rules[$total + 1];
+		$sign_credit = $sign_rules[$total + 1];
 	} else {
 		$tomorrow_sign_credit = $sign_set['everydaynum'];
+		$sign_credit = $sign_set['everydaynum'];
 	}
 	$data = array(
 		'uniacid' => $_W['uniacid'],
 		'uid' => $_W['member']['uid'],
-		'credit' => $today_sign_credit,
+		'credit' => $sign_credit,
 		'is_grant' => 0,
 		'addtime' => TIMESTAMP,
 	);
@@ -282,6 +284,78 @@ if ($do == 'mycard') {
 	load()->model('card');
 	$activity_setting = card_params_setting('cardActivity');
 	$notice_count = card_notice_stat();
+
+	$params = json_decode($setting['params'], true);
+	foreach ($params as $key => $value) {
+		$params_new[$value['id']] = $value;  
+	}
+	$activity_info = $params_new['cardActivity'];
+	$recharge_info = $params_new['cardRecharge'];
+	$nums_info = $params_new['cardNums'];
+	$times_info = $params_new['cardTimes'];
+	$activity_description_show = false;
+	if ($activity_info['params']['discount_type'] != 0 || $recharge_info['params']['recharge_type'] != 0 || $nums_info['params']['nums_status'] != 0 || $times_info['params']['times_status'] != 0) {
+		$activity_description_show = true;
+	}
+
+}
+
+if ($do == 'activity_description') {
+	$params = json_decode($setting['params'], true);
+	foreach ($params as $key => $value) {
+		$params_new[$value['id']] = $value;  
+	}
+	$activity_info = $params_new['cardActivity'];
+	$recharge_info = $params_new['cardRecharge'];
+	$nums_info = $params_new['cardNums'];
+	$times_info = $params_new['cardTimes'];
+	if ($activity_info['params']['discount_type'] == 0 && $recharge_info['params']['recharge_type'] == 0 && $nums_info['params']['nums_status'] == 0 && $times_info['params']['times_status'] == 0) {
+		message('暂无优惠信息', referer(), 'error');
+	}
+	if ($activity_info['params']['discount_type'] != 0) {
+		foreach ($activity_info['params']['discounts'] as $key => $val) {
+			$activity_description[$key][0] = $val['title'];
+			if ($activity_info['params']['discount_type'] == 1) {
+				if (!empty($val['condition_1']) && !empty($val['discount_1'])) {
+					$activity_description[$key][1] = '消费 <span class="mui-badge mui-badge-danger">满</span> ' . $val['condition_1'] . ' 元，<span class="mui-badge mui-badge-danger">减</span> ' . $val['discount_1'] . ' 元';
+				} else {
+					unset($activity_description[$key]);
+				}
+			} else {
+				if (!empty($val['condition_2']) && !empty($val['discount_2'])) {
+					$activity_description[$key][1] = '消费 <span class="mui-badge mui-badge-danger">满</span> ' . $val['condition_2'] . ' 元，<span class="mui-badge mui-badge-danger">打</span>'  . $val['discount_2'] . ' 折';
+				} else {
+					unset($activity_description[$key]);
+				}
+			}
+		}
+	}
+
+	if ($recharge_info['params']['recharge_type'] == 1) {
+		foreach ($recharge_info['params']['recharges'] as $key => $value) {
+			if ($value['backtype'] == '0') {
+				$recharge_description[$key] = '<span class="mui-badge mui-badge-danger">充</span> ' . $value['condition'] . ' 元，<span class="mui-badge mui-badge-danger">返</span> ' . $value['back'] . ' 元';
+			} else {
+				$recharge_description[$key] = '<span class="mui-badge mui-badge-danger">充</span> ' . $value['condition'] . ' 元，<span class="mui-badge mui-badge-danger">返</span> ' . $value['back'] . ' 积分';
+			}
+		}
+	}
+
+	if ($nums_info['params']['nums_status'] == 1) {
+		foreach ($nums_info['params']['nums'] as $key => $value) {
+			if (!empty($value['recharge']) && !empty($value['num'])) {
+				$nums_description[$key] = '<span class="mui-badge mui-badge-danger">充</span> ' . $value['recharge'] . ' 元， ' . $value['num'] . ' 次';
+			}
+		}
+	}
+
+	if ($times_info['params']['times_status'] == 1) {
+		foreach ($times_info['params']['times'] as $key => $value) {
+			if (!empty($value['recharge']) && !empty($value['time'])) {
+				$times_description[$key] = '<span class="mui-badge mui-badge-danger">充</span> ' . $value['recharge'] . ' 元， ' . $value['time'] . ' 天';
+			}
+		}
+	}
 }
 
 
@@ -366,7 +440,7 @@ if ($do == 'consume') {
 		$data = array(
 			'uniacid' => $_W['uniacid'],
 			'clerk_id' => 0,
-			'clerk_type' => 0,
+			'clerk_type' => 3,
 			'store_id' => intval($_GPC['store_id']),
 			'body' => $body,
 			'fee' => $fee,

@@ -9,7 +9,7 @@ defined('IN_IA') or exit('Access Denied');
 function uni_create_permission($uid, $type = 1) {
 	$groupid = pdo_fetchcolumn('SELECT groupid FROM ' . tablename('users') . ' WHERE uid = :uid', array(':uid' => $uid));
 	$groupdata = pdo_fetch('SELECT maxaccount, maxsubaccount FROM ' . tablename('users_group') . ' WHERE id = :id', array(':id' => $groupid));
-	$list = pdo_fetchall('SELECT uniacid FROM ' . tablename('uni_account_users') . ' WHERE uid = :uid AND role = :role ', array(':uid' => $uid, ':role' => 'owner'));
+	$list = pdo_fetchall('SELECT c.uniacid FROM (SELECT u.uniacid, a.default_acid FROM ' . tablename('uni_account_users') . ' as u RIGHT JOIN '. tablename('uni_account').' as a  ON a.uniacid = u.uniacid  WHERE u.uid = :uid AND u.role = :role ) AS c LEFT JOIN '.tablename('account').' as d ON c.default_acid = d.acid WHERE d.isdeleted = 0', array(':uid' => $uid, ':role' => 'owner'));
 	foreach ($list as $item) {
 		$uniacids[] = $item['uniacid'];
 	}
@@ -949,8 +949,8 @@ function account_delete($acid) {
 		}
 
 				$tables = array(
-			'account','account_wechats', 'activity_coupon',
-			'activity_coupon_allocation','activity_coupon_modules','activity_clerks',
+			'account','account_wechats',
+			'activity_clerks',
 			'activity_coupon_record','activity_exchange','activity_exchange_trades','activity_exchange_trades_shipping',
 			'activity_modules', 'core_attachment','core_paylog','core_queue','core_resource',
 			'wechat_attachment','coupon','coupon_modules',

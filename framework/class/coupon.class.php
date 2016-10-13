@@ -297,6 +297,7 @@ class coupon extends WeiXinAccount {
 	}
 
 	
+	
 	public function ModifyStockCard($card_id, $num) {
 		$data['card_id'] = trim($card_id);
 		$data['increase_stock_value'] = 0;

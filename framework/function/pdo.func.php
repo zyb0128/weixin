@@ -49,12 +49,12 @@ function pdo_get($tablename, $condition = array(), $fields = array()) {
 	return pdo()->get($tablename, $condition, $fields);
 }
 
-function pdo_getall($tablename, $condition = array(), $fields = array(), $keyfield = '') {
-	return pdo()->getall($tablename, $condition, $fields, $keyfield);
+function pdo_getall($tablename, $condition = array(), $fields = array(), $keyfield = '', $orderby = array(), $limit = array()) {
+	return pdo()->getall($tablename, $condition, $fields, $keyfield, $orderby, $limit);
 }
 
-function pdo_getslice($tablename, $condition = array(), $limit = array(), &$total = null, $fields = array(), $keyfield = '') {
-	return pdo()->getslice($tablename, $condition, $limit, $total, $fields, $keyfield);
+function pdo_getslice($tablename, $condition = array(), $limit = array(), &$total = null, $fields = array(), $keyfield = '', $orderby = array()) {
+	return pdo()->getslice($tablename, $condition, $limit, $total, $fields, $keyfield, $orderby);
 }
 
 function pdo_getcolumn($tablename, $condition = array(), $field) {

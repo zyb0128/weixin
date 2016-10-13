@@ -8,22 +8,25 @@ defined('IN_IA') or exit('Access Denied');
 load()->model('cloud');
 load()->func('communication');
 
-if (!defined('MODULE_ROOT')) {
-	trigger_error('CloudAPI 仅限模块中使用!');
-}
-
 class CloudApi {
 	
 	private $url = 'http://api.we7.cc/index.php?c=%s&a=%s&access_token=%s&';
 	private $development = false;
 	private $module = null;
+	private $sys_call = false;
 	
 	const ACCESS_TOKEN_EXPIRE_IN = 7200;
 	
 	
 	public function __construct($development = false) {
+		if (!defined('MODULE_ROOT')) {
+			$this->sys_call = true;
+			$this->module = 'core';
+		} else {
+			$this->sys_call = false;
+			$this->module = pathinfo(MODULE_ROOT, PATHINFO_BASENAME);
+		}
 		$this->development = $development;
-		$this->module = pathinfo(MODULE_ROOT, PATHINFO_BASENAME);
 	}
 	
 	private function getCerContent($file) {
@@ -65,7 +68,7 @@ class CloudApi {
 			$pars = _cloud_build_params();
 			$pars['method'] = 'api.oauth';
 			$pars['module'] = $this->module;
-			$data = cloud_request('http://v2.addons.we7.cc/gateway.php', $pars);
+			$data = cloud_request('http://s.we7.cc/gateway.php', $pars);
 			if (is_error($data)) {
 				return $data;
 			}
@@ -83,6 +86,44 @@ class CloudApi {
 		return $cer;
 	}
 	
+	private function systemCerContent(){
+		$cer_filename = 'module.cer';
+		$cer_filepath = IA_ROOT.'/framework/builtin/core/module.cer';
+		
+		load()->func('file');
+		$we7_team_dir = dirname($cer_filepath);
+		if (!is_dir($we7_team_dir)) {
+			mkdirs($we7_team_dir);
+		}
+		
+		if (is_file($cer_filepath)) {
+			$expire_time = filemtime($cer_filepath) + CloudApi::ACCESS_TOKEN_EXPIRE_IN - 200;
+			if (TIMESTAMP > $expire_time) {
+				unlink($cer_filepath);
+			}
+		}
+		
+		if (!is_file($cer_filepath)) {
+			$pars = _cloud_build_params();
+			$pars['method'] = 'api.oauth';
+			$pars['module'] = $this->module;
+			$data = cloud_request('http://s.we7.cc/gateway.php', $pars);
+			if (is_error($data)) {
+				return $data;
+			}
+			$data = json_decode($data['content'], true);
+			if (is_error($data)) {
+				return $data;
+			}
+		}
+		$cer = file_get_contents($cer_filepath);
+		if (is_error($cer)) {
+			return error(1, '访问云API获取授权失败,模块中未发现数字证书(module.cer).');;
+		}
+		
+		return $cer;
+	}
+	
 	private function deleteModuleCer() {
 		$cer_filename = 'module.cer';
 		$cer_filepath = $this->cer_filepath($cer_filename);
@@ -93,11 +134,16 @@ class CloudApi {
 	
 	private function getAccessToken(){
 		global $_W;
-		if ($this->development) {
-			$token = $this->developerCerContent();
+		if ($this->sys_call) {
+			$token = $this->systemCerContent();
 		} else {
-			$token = $this->moduleCerContent();
+			if ($this->development) {
+				$token = $this->developerCerContent();
+			} else {
+				$token = $this->moduleCerContent();
+			}
 		}
+		
 		if (empty($token)) {
 			return error(1, '错误的数字证书内容.');
 		}

@@ -34,38 +34,41 @@ if($do == 'display') {
 	}
 	$condition .= intval($_GPC['groupid']) > 0 ?  " AND `groupid` = '".intval($_GPC['groupid'])."'" : '';
 	if(checksubmit('export_submit', true)) {
-		$sql = "SELECT uid, uniacid, groupid, realname, nickname, email, mobile, credit1, credit2, credit6, createtime  FROM ".tablename('mc_members')." WHERE uniacid = :uniacid ".$condition." ORDER BY createtime";
-		$list = pdo_fetchall($sql, $params);
+		$count = pdo_fetchcolumn("SELECT COUNT(*) FROM". tablename('mc_members')." WHERE uniacid = :uniacid ".$condition, $params);
+		$pagesize = ceil($count/5000);
 		$header = array(
-			'uid' => 'UID', 'realname' => '姓名', 'groupid' => '会员组', 'mobile' => '手机', 'email' => '邮箱',
+			'uid' => 'UID', 'nickname' => '昵称', 'realname' => '姓名', 'groupid' => '会员组', 'mobile' => '手机', 'email' => '邮箱',
 			'credit1' => '积分', 'credit2' => '余额', 'createtime' => '注册时间',
 		);
 		$keys = array_keys($header);
 		$html = "\xEF\xBB\xBF";
-		foreach($header as $li) {
+		foreach ($header as $li) {
 			$html .= $li . "\t ,";
 		}
 		$html .= "\n";
-		if(!empty($list)) {
-			$size = ceil(count($list) / 500);
-			for($i = 0; $i < $size; $i++) {
-				$buffer = array_slice($list, $i * 500, 500);
-				foreach($buffer as $row) {
-					if(strexists($row['email'], 'we7.cc')) {
-						$row['email'] = '';
+		for ($j = 1; $j <= $pagesize; $j++) {
+			$sql = "SELECT uid, uniacid, groupid, realname, nickname, email, mobile, credit1, credit2, credit6, createtime  FROM " . tablename('mc_members') . " WHERE uniacid = :uniacid " . $condition . " ORDER BY createtime limit " . ($j - 1) * 5000 . ",5000 ";
+			$list = pdo_fetchall($sql, $params);
+			if (!empty($list)) {
+				$size = ceil(count($list) / 500);
+				for ($i = 0; $i < $size; $i++) {
+					$buffer = array_slice($list, $i * 500, 500);
+					foreach ($buffer as $row) {
+						if (strexists($row['email'], 'we7.cc')) {
+							$row['email'] = '';
+						}
+						$row['createtime'] = date('Y-m-d H:i:s', $row['createtime']);
+						$row['groupid'] = $groups[$row['groupid']]['title'];
+						foreach ($keys as $key) {
+							$data[] = $row[$key];
+						}
+						$user[] = implode("\t ,", $data) . "\t ,";
+						unset($data);
 					}
-					$row['createtime'] = date('Y-m-d H:i:s', $row['createtime']);
-					$row['groupid'] = $groups[$row['groupid']]['title'];
-					foreach($keys as $key) {
-						$data[] = $row[$key];
-					}
-					$user[] = implode("\t ,", $data) . "\t ,";
-					unset($data);
+					$html .= implode("\n", $user);
 				}
 			}
-			$html .= implode("\n", $user);
 		}
-		
 		header("Content-type:text/csv");
 		header("Content-Disposition:attachment; filename=会员数据.csv");
 		echo $html;
@@ -94,15 +97,15 @@ if($do == 'post') {
 	if ($_W['ispost'] && $_W['isajax']) {
 		if ($_GPC['op'] == 'addaddress' || $_GPC['op'] == 'editaddress') {
 			$post = array(
-			'uniacid' => $_W['uniacid'],
-			'province' => trim($_GPC['province']),
-			'city' => trim($_GPC['city']),
-			'district' => trim($_GPC['district']),
-			'address' => trim($_GPC['detail']),
-			'uid' => intval($_GPC['uid']),
-			'username' => trim($_GPC['name']),
-			'mobile' => trim($_GPC['phone']),
-			'zipcode' => trim($_GPC['code'])
+				'uniacid' => $_W['uniacid'],
+				'province' => trim($_GPC['province']),
+				'city' => trim($_GPC['city']),
+				'district' => trim($_GPC['district']),
+				'address' => trim($_GPC['detail']),
+				'uid' => intval($_GPC['uid']),
+				'username' => trim($_GPC['name']),
+				'mobile' => trim($_GPC['phone']),
+				'zipcode' => trim($_GPC['code'])
 			);
 			if ($_GPC['op'] == 'addaddress') {
 				$sql = "SELECT COUNT(*) FROM ". tablename('mc_member_address'). " WHERE uniacid = :uniacid AND uid = :uid";

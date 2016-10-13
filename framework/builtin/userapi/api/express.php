@@ -1,8 +1,8 @@
 <?php 
 $matchs = array();
-$ret = preg_match('/^(?P<express>申通|圆通|中通|汇通|韵达|顺丰|ems) *(?P<sn>[a-z\d]{1,})$/i', $this->message['content'], $matchs);
+$ret = preg_match('/^(?P<express>申通|圆通|中通|汇通|韵达|顺丰|ems|天天|宅急送|邮政|德邦|全峰) *(?P<sn>[a-z\d]{1,})$/i', $this->message['content'], $matchs);
 if(!$ret) {
-	return $this->respText('请输入合适的格式, 快递公司+空格+单号(当前仅支持申通,圆通,中通,汇通,韵达,顺丰,EMS), 例如: 申通 2309381801');
+	return $this->respText('请输入合适的格式, 快递公司+空格+单号(当前仅支持申通,圆通,中通,汇通,韵达,顺丰,EMS,天天,宅急送,邮政,德邦,全峰), 例如: 申通 2309381801');
 }
 $express = $matchs['express'];
 $sn = $matchs['sn'];

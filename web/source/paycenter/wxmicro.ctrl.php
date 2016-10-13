@@ -6,7 +6,7 @@
 defined('IN_IA') or exit('Access Denied');
 uni_user_permission_check('paycenter_wxmicro_pay');
 $_W['page']['title'] = '刷卡支付-微信收款';
-$dos = array('pay', 'query');
+$dos = array('pay', 'query', 'checkpay');
 $do = in_array($do, $dos) ? $do : 'pay';
 load()->model('paycenter');
 
@@ -190,14 +190,18 @@ if($do == 'pay') {
 			);
 			
 			$result = $pay->buildMicroOrder($data);
-			if(is_error($result)) {
-				message($result,  '', 'ajax');
-			} else {
-				$status = $pay->NoticeMicroSuccessOrder($result);
-				if(is_error($status)) {
-					message($status, '', 'ajax');
+			if ($result['result_code'] == 'SUCCESS') {
+				if(is_error($result)) {
+					message($result,  '', 'ajax');
+				} else {
+					$status = $pay->NoticeMicroSuccessOrder($result);
+					if(is_error($status)) {
+						message($status, '', 'ajax');
+					}
+					message(error(0, '支付成功'), url('paycenter/wxmicro'), 'ajax');
 				}
-				message(error(0, '支付成功'), url('paycenter/wxmicro'), 'ajax');
+			} else {
+				message($result,  '', 'ajax');
 			}
 		}
 		exit();
@@ -242,4 +246,24 @@ if($do == 'query') {
 	}
 }
 
+if ($do == 'checkpay') {
+	if($_W['isajax']) {
+		$post = $_GPC['__input'];
+		$uniontid = trim($post['uniontid']);
+		load()->classs('pay');
+		$pay = Pay::create();
+		$result = $pay->queryOrder($uniontid, 2);
+		if(is_error($result)) {
+			message($result, '', 'ajax');
+		}
+		if($result['trade_state'] == 'SUCCESS') {
+			$status = $pay->NoticeMicroSuccessOrder($result);
+			if(is_error($status)) {
+				message($status, '', 'ajax');
+			}
+			message($result, '', 'ajax');
+		}
+		message($result, '', 'ajax');
+	}
+}
 template('paycenter/wxmicro');

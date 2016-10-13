@@ -360,7 +360,15 @@ class WeiXinAccount extends WeAccount {
 		if(is_error($response)) {
 			return error(-1, "访问公众平台接口失败, 错误: {$response['message']}");
 		}
+		preg_match('/city":"(.*)","province":"(.*)","country":"(.*)"/U', $response['content'], $reg_arr);
+		$city = htmlentities(bin2hex($reg_arr[1]));
+		$province = htmlentities(bin2hex($reg_arr[2]));
+		$country = htmlentities(bin2hex($reg_arr[3]));
+		$response['content'] = str_replace('"city":"'.$reg_arr[1].'","province":"'.$reg_arr[2].'","country":"'.$reg_arr[3].'"', '"city":"'.$city.'","province":"'.$province.'","country":"'.$country.'"', $response['content']);
 		$result = @json_decode($response['content'], true);
+		$result['city'] = hex2bin(html_entity_decode($result['city']));
+		$result['province'] = hex2bin(html_entity_decode($result['province']));
+		$result['country'] = hex2bin(html_entity_decode($result['country']));
 		if(empty($result)) {
 			return error(-1, "接口调用失败, 元数据: {$response['meta']}");
 		} elseif(!empty($result['errcode'])) {

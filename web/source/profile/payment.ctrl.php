@@ -6,11 +6,31 @@
 defined('IN_IA') or exit('Access Denied');
 uni_user_permission_check('profile_payment');
 $_W['page']['title'] = '支付参数 - 公众号选项';
-$setting = uni_setting($_W['uniacid'], array('payment', 'recharge'));
+$setting = uni_setting($_W['uniacid'], array('payment', 'recharge', 'oauth'));
 $pay = $setting['payment'];
 $recharge =  $setting['recharge'];
 if(!is_array($pay)) {
 	$pay = array();
+}
+$params = array();
+if(empty($_W['isfounder'])) {
+	$where = " WHERE `uniacid` IN (SELECT `uniacid` FROM " . tablename('uni_account_users') . " WHERE `uid`=:uid)";
+	$params[':uid'] = $_W['uid'];
+}
+$sql = "SELECT * FROM " . tablename('uni_account') . $where;
+$uniaccounts = pdo_fetchall($sql, $params);
+$borrow = array();
+if(!empty($uniaccounts)) {
+	foreach($uniaccounts as $uniaccount) {
+		$account = account_fetch($uniaccount['default_acid']);
+		$account_setting = pdo_get('uni_settings', array('uniacid' => $account['uniacid']));
+		$payment = iunserializer($account_setting['payment']);
+		if (!empty($account['key']) && !empty($account['secret']) && in_array($account['level'], array(4)) && !empty($payment) && intval($payment['wechat']['switch']) == 1 ) {
+			if ((!is_bool($payment['wechat']['switch']) && $payment['wechat']['switch'] != 4) || (is_bool($payment['wechat']['switch']) && !empty($payment['wechat']['switch']))) {
+				$borrow[$account['uniacid']] = $account['name'];
+			}
+		}
+	}
 }
 if($_W['ispost']) {
 	$credit = array_elements(array('switch'), $_GPC['credit']);
@@ -27,7 +47,7 @@ if($_W['ispost']) {
 	if($alipay['switch'] && (empty($alipay['account']) || empty($alipay['partner']) || empty($alipay['secret']))) {
 		message('请输入完整的支付宝接口信息.');
 	}
-	if($_GPC['alipay']['t'] == 'true') {
+	if($_GPC['alipay']['test'] == 'true') {
 		$params = array();
 		$params['tid'] = md5(uniqid());
 		$params['user'] = '测试用户';
@@ -41,11 +61,11 @@ if($_W['ispost']) {
 		}
 		exit();
 	}
-	$wechat = array_elements(array('switch', 'account', 'signkey', 'partner', 'key', 'version', 'mchid', 'apikey', 'version'), $_GPC['wechat']);
-	$wechat['switch'] = $wechat['switch'] == 'true';
+	$wechat = array_elements(array('switch', 'account', 'signkey', 'partner', 'key', 'version', 'mchid', 'apikey', 'version', 'borrow', 'sub_mch_id'), $_GPC['wechat']);
 	$wechat['signkey'] = $wechat['version'] == 2 ? trim($wechat['apikey']) : trim($wechat['signkey']);
 	$wechat['partner'] = trim($wechat['partner']);
 	$wechat['key'] = trim($wechat['key']);
+	$wechat['sub_mch_id'] = trim($wechat['sub_mch_id']);
 	if($wechat['switch'] && empty($wechat['account'])) {
 		message('请输入完整的微信支付接口信息.');
 	}
@@ -74,7 +94,6 @@ if($_W['ispost']) {
 	$pay['unionpay'] = $unionpay;
 	$pay['baifubao'] = $baifubao;
 	$pay['line'] = $line;
-	
 	if ($unionpay['switch'] && !empty($_FILES['unionpay']['tmp_name']['signcertpath'])) {
 		load()->func('file');
 		mkdirs(IA_ROOT . '/attachment/unionpay/');

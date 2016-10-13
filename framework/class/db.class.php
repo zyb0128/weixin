@@ -195,7 +195,7 @@ class DB {
 		return $this->fetch($sql, $condition['params']);
 	}
 	
-	public function getall($tablename, $params = array(), $fields = array(), $keyfield = '') {
+	public function getall($tablename, $params = array(), $fields = array(), $keyfield = '', $orderby = array(), $limit = array()) {
 		$select = '*';
 		if (!empty($fields)){
 			if (is_array($fields)) {
@@ -205,11 +205,32 @@ class DB {
 			}
 		}
 		$condition = $this->implode($params, 'AND');
-		$sql = "SELECT {$select} FROM " .$this->tablename($tablename) . (!empty($condition['fields']) ? " WHERE {$condition['fields']}" : '') . $limitsql;
+		
+		if (!empty($limit)) {
+			if (is_array($limit)) {
+				if (count($limit) == 1) {
+					$limitsql = " LIMIT " . $limit[0];
+				} else {
+					$limitsql = " LIMIT " . ($limit[0] - 1) * $limit[1] . ', ' . $limit[1];
+				}
+			} else {
+				$limitsql = strexists(strtoupper($limit), 'LIMIT') ? " $limit " : " LIMIT $limit";
+			}
+		}
+		
+		if (!empty($orderby)) {
+			if (is_array($orderby)) {
+				$orderbysql = implode(',', $orderbysql);
+			} else {
+				$orderbysql = $orderby;
+			}
+		}
+		
+		$sql = "SELECT {$select} FROM " .$this->tablename($tablename) . (!empty($condition['fields']) ? " WHERE {$condition['fields']}" : '') . (!empty($orderbysql) ? " ORDER BY $orderbysql " : '') . $limitsql;
 		return $this->fetchall($sql, $condition['params'], $keyfield);
 	}
 	
-	public function getslice($tablename, $params = array(), $limit = array(), &$total = null, $fields = array(), $keyfield = '') {
+	public function getslice($tablename, $params = array(), $limit = array(), &$total = null, $fields = array(), $keyfield = '', $orderby = array()) {
 		$select = '*';
 		if (!empty($fields)){
 			if (is_array($fields)) {
@@ -226,7 +247,16 @@ class DB {
 				$limitsql = strexists(strtoupper($limit), 'LIMIT') ? " $limit " : " LIMIT $limit";
 			}
 		}
-		$sql = "SELECT {$select} FROM " . $this->tablename($tablename) . (!empty($condition['fields']) ? " WHERE {$condition['fields']}" : '') . $limitsql;
+		
+		if (!empty($orderby)) {
+			if (is_array($orderby)) {
+				$orderbysql = implode(',', $orderbysql);
+			} else {
+				$orderbysql = $orderby;
+			}
+		}
+		
+		$sql = "SELECT {$select} FROM " . $this->tablename($tablename) . (!empty($condition['fields']) ? " WHERE {$condition['fields']}" : '') . (!empty($orderbysql) ? " ORDER BY $orderbysql " : '') . $limitsql;
 		$total = pdo_fetchcolumn("SELECT COUNT(*) FROM " . tablename($tablename) . (!empty($condition['fields']) ? " WHERE {$condition['fields']}" : ''), $condition['params']);
 		return $this->fetchall($sql, $condition['params'], $keyfield);
 	}

@@ -30,8 +30,8 @@
 		</div>
 		<div class="card-info">
 			<div class="mui-text-center">
-				<span class="vip" style="color: #fff;">VIP</span>
-				<span class="card-rank" style="color: #fff;">{$_W['member']['groupname']}</span>
+				<span class="vip" style="color:{if !empty($setting['color']['rank'])}{$setting['color']['rank']}{/if}">VIP</span>
+				<span class="card-rank" style="color:{if !empty($setting['color']['rank'])}{$setting['color']['rank']}{/if}">{$_W['member']['groupname']}</span>
 			</div>
 			{if !$setting['format_type']}
 			<div class="card-no mui-text-right" style="color:{if !empty($setting['color']['number'])}{$setting['color']['number']}{/if}">会员卡号:<span style="color: #fff;">{$setting['format']}</span></div>
@@ -117,10 +117,10 @@
 				</div>
 				<div class="card-info">
 					<div class="mui-text-center">
-						<span class="vip" style="color:#fff;">VIP</span>
-						<span class="card-rank" style="color: #fff;">{$_W['member']['groupname']}</span>
+						<span class="vip" style="color:{if !empty($setting['color']['rank'])}{$setting['color']['rank']}{/if}">VIP</span>
+						<span class="card-rank" style="color:{if !empty($setting['color']['rank'])}{$setting['color']['rank']}{/if}">{$_W['member']['groupname']}</span>
 					</div>
-					<div class="card-no mui-text-right">会员卡号:<span style="color: #fff;">{$mcard['cardsn']}</span></div>
+					<div class="card-no mui-text-right">会员卡号:<span style="color:{if !empty($setting['color']['number'])}{$setting['color']['number']}{/if}">{$mcard['cardsn']}</span></div>
 				</div>
 			</a>
 		</div>
@@ -221,8 +221,115 @@
 				</a>
 			</li>
 		</ul>
-	</div>
+	{if !empty($activity_description_show)}
+	<ul class="mui-table-view mui-table-view-chevron">
+		<li class="mui-table-view-cell">
+			<a href="{php echo url('mc/card/activity_description') . 'wxref=mp.weixin.qq.com#wechat_redirect';}" class="mui-navigate-right">
+				优惠说明
+			</a>
+		</li>
+	</ul>
 	{/if}
+</div>
+{/if}
+{/if}
+
+{if $do == 'activity_description'}
+<div class="mui-content">
+	<ul class="mui-table-view mui-table-view-chevron">
+		{if $activity_info['params']['discount_type'] != 0}
+		<li class="mui-table-view-cell js-activity-descrpition">
+			消费优惠信息
+			<span class="mui-pull-right">
+				<span class="fa fa-angle-down">
+			</span>
+		</li>
+		<div style="display:none;">
+			<ul class="mui-table-view mui-table-view-chevron">
+				{loop $activity_description $description}
+				<li class="mui-table-view-cell mui-content-padded">
+					{$description[0]}
+					<span style="margin-left:50px;" class="mui-text-center">{$description[1]}</span>
+				</li>
+				{/loop}
+			</ul>
+			{if $activity_info['params']['discount_style'] == 2}
+			<div style="background-color:{$activity_info['params']['bgColor']}">{$activity_info['params']['content']}</div>
+			{/if}
+		</div>
+		{/if}
+		{if $recharge_info['params']['recharge_type'] != 0}
+		<li class="mui-table-view-cell js-activity-descrpition">
+			充值优惠信息
+			<span class="mui-pull-right">
+				<span class="fa fa-angle-down">
+			</span>
+		</li>
+		<div style="display:none;">
+			<ul class="mui-table-view mui-table-view-chevron">
+				{loop $recharge_description $description}
+				<li class="mui-table-view-cell mui-content-padded mui-text-center">
+					<span style="margin-left:50px;">
+					{$description}
+					</span>
+				</li>
+				{/loop}
+			</ul>
+		</div>
+		{/if}
+		{if $nums_info['params']['nums_status'] != 0}
+		<li class="mui-table-view-cell js-activity-descrpition">
+			{$nums_info['params']['nums_text']}信息
+			<span class="mui-pull-right">
+				<span class="fa fa-angle-down">
+			</span>
+		</li>
+		<div style="display:none;">
+			<ul class="mui-table-view mui-table-view-chevron">
+				{loop $nums_description $description}
+				<li class="mui-table-view-cell mui-content-padded mui-text-center">
+					<span>
+					{$description}
+					</span>
+				</li>
+				{/loop}
+			</ul>
+			{if $nums_info['params']['nums_style'] == 2}
+			<div style="background-color:{$nums_info['params']['bgColor']}">{$nums_info['params']['content']}</div>
+			{/if}
+		</div>
+		{/if}
+		{if $times_info['params']['times_status'] != 0}
+		<li class="mui-table-view-cell js-activity-descrpition">
+			{$times_info['params']['times_text']}信息
+			<span class="mui-pull-right">
+				<span class="fa fa-angle-down">
+			</span>
+		</li>
+		<div style="display:none;">
+			<ul class="mui-table-view mui-table-view-chevron">
+				{loop $times_description $description}
+				<li class="mui-table-view-cell mui-content-padded mui-text-center">
+					<span>
+					{$description}
+					</span>
+				</li>
+				{/loop}
+			</ul>
+			{if $times_info['params']['times_style'] == 2}
+			<div style="background-color:{$times_info['params']['bgColor']}">{$times_info['params']['content']}</div>
+			{/if}
+		</div>
+		{/if}
+	</ul>
+</div>
+<script>
+	$('.js-activity-descrpition').click(function() {
+		$(this).next().toggle();
+		$(this).find('span.fa').toggleClass('fa-angle-up');
+		$(this).find('span.fa').toggleClass('fa-angle-down');
+	})
+</script>
 {/if}
 
 {if $do == 'add_recharge'}
@@ -402,14 +509,19 @@ $(function(){
 			{php }}
 		</div>
 	</div>
+	{if !empty($today_signed['id'])}
 	<div class="sign-record">今日已签到<span class="mui-big">+{$today_sign_credit}</span>积分</div>
 	<div class="mui-text-muted sign-tips mui-mt10">明日可得 <span>+{$tomorrow_sign_credit}</span>积分</div>
+	{/if}
 </div>
 <script>
 	$(function() {
 		today_signed = "{$today_signed['id']}";
 		if (!today_signed) {
 			util.toast('签到成功');
+			setTimeout(function(){
+				location.reload();
+			},2500);
 		}
 	})
 </script>

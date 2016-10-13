@@ -83,6 +83,7 @@ if(!empty($type)) {
 				$record['is_usecard'] = 1;
 				$record['card_fee'] = $coupon_info['fee'];
 				$record['encrypt_code'] = trim($_GPC['code']);
+				activity_coupon_type_init();
 				if (COUPON_TYPE == WECHAT_COUPON) {
 					$record['card_type'] = 1;
 					$record['card_id'] = $coupon_info['id'];
@@ -123,6 +124,21 @@ if(!empty($type)) {
 		}
 	}
 	if($type == 'wechat') {
+		$payopenid = $_GPC['payopenid'];
+		$setting = uni_setting($_W['uniacid'], array('payment', 'recharge'));
+		if ((intval($setting['payment']['wechat']['switch']) == 2 || intval($setting['payment']['wechat']['switch']) == 3) && empty($payopenid)) { 			$uniacid = !empty($setting['payment']['wechat']['service']) ? $setting['payment']['wechat']['service'] : $setting['payment']['wechat']['borrow'];
+			$acid = pdo_getcolumn('uni_account', array('uniacid' => $uniacid), 'default_acid');
+			$from = $_GPC['params'];
+			$url = $_W['siteroot'].'app'.str_replace('./', '/', murl('auth/oauth'));
+			$callback = urlencode($url);
+			$oauth_account = WeAccount::create($acid);
+			$_SESSION['pay_params'] = $from;
+			$state = 'we7sid-'.$_W['session_id'];
+			$forward = $oauth_account->getOauthCodeUrl($callback, $state);
+			header('Location: ' . $forward);
+			exit();
+		}
+		unset($_SESSION['pay_params']);
 		if(!empty($plid)) {
 			$tag = array();
 			$tag['acid'] = $_W['acid'];
@@ -134,7 +150,7 @@ if(!empty($type)) {
 		load()->func('communication');
 		$sl = base64_encode(json_encode($ps));
 		$auth = sha1($sl . $_W['uniacid'] . $_W['config']['setting']['authkey']);
-		header("location: ../payment/wechat/pay.php?i={$_W['uniacid']}&auth={$auth}&ps={$sl}");
+		header("Location:../payment/wechat/pay.php?i={$_W['uniacid']}&auth={$auth}&ps={$sl}&payopenid={$payopenid}");
 		exit();
 	}
 	if($type == 'credit') {
@@ -158,20 +174,37 @@ if(!empty($type)) {
 				 	$status = activity_coupon_use($coupon_info['id'], $coupon_record['id'], $params['module']);
 				}
 				$fee = floatval($ps['fee']);
-				$result = mc_credit_update($_W['member']['uid'], $setting['creditbehaviors']['currency'], -$fee, array($_W['member']['uid'], '消费' . $setting['creditbehaviors']['currency'] . ':' . $fee));
+				if ($log['module'] == 'paycenter') {
+					load()->model('card');
+					$recharges_set = card_params_setting('cardRecharge');
+					$card_settings = card_setting();
+					$grant_rate = $card_settings['grant_rate'];
+					$grant_rate_switch = intval($recharges_set['params']['grant_rate_switch']);
+					$grant_credit1_enable = false;
+					if (!empty($grant_rate)) {
+						if (empty($recharges_set['params']['recharge_type'])) {
+							$grant_credit1_enable = true;
+						} else {
+							if ($grant_rate_switch == '1') {
+								$grant_credit1_enable = true;
+							}
+						}
+					}
+					$paycenter_order = pdo_get('paycenter_order', array('id' => $params['tid']), array('store_id'));
+					if (!empty($grant_credit1_enable)) {
+						$num = $fee * $grant_rate;
+						$tips .= "用户消费{$fee}元，余额支付{$fee}，积分赠送比率为:【1：{$grant_rate}】,共赠送【{$num}】积分";
+						mc_credit_update($log['openid'], 'credit1', $num, array('0', $tip, 'paycenter', 0, $paycenter_order['store_id'], 3));
+					}
+					$result = mc_credit_update($log['openid'], 'credit2', -$fee, array('0', $tip, 'paycenter', 0, $paycenter_order['store_id'], 3));
+				} else {
+					$result = mc_credit_update($_W['member']['uid'], $setting['creditbehaviors']['currency'], -$fee, array($_W['member']['uid'], '消费' . $setting['creditbehaviors']['currency'] . ':' . $fee));	
+				}
 				if (is_error($result)) {
 					message($result['message'], '', 'error');
 				}
 				if (!empty($_W['openid'])) {
 					if ($log['module'] == 'paycenter') {
-						load()->model('card');
-						$recharges_set = card_params_setting('cardRecharge');
-						$grant_rate = 0;
-						if (empty($recharges_set['params']['recharge_type'])) {
-							$card_settings = card_setting();
-							$grant_rate = $card_settings['grant_rate'];
-							mc_credit_update($log['openid'], 'credit1', $fee * $grant_rate);
-						}
 						mc_notice_credit2($_W['openid'], $_W['member']['uid'], $fee, $fee * $grant_rate, '线上消费');
 					} else {
 						mc_notice_credit2($_W['openid'], $_W['member']['uid'], $fee, 0, '线上消费');

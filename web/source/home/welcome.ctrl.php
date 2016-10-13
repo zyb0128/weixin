@@ -46,6 +46,9 @@ if($do != 'solution') {
 }
 
 if($do == 'platform') {
+	if (empty($_W['account']['endtime']) && !empty($_W['account']['endtime']) && $_W['account']['endtime'] < time()) {
+		message('公众号已到服务期限，请续费', referer(), 'info');
+	}
 	uni_update_week_stat();
 	$title = '平台相关数据';
 	$yesterday = date('Ymd', strtotime('-1 days'));
