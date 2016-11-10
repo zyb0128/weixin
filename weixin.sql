@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2016-09-27 05:26:38
+-- Generation Time: 2016-11-10 03:11:28
 -- 服务器版本： 5.6.17
 -- PHP Version: 5.5.12
 
@@ -473,22 +473,22 @@ CREATE TABLE IF NOT EXISTS `zyb_core_cache` (
 --
 
 INSERT INTO `zyb_core_cache` (`key`, `value`) VALUES
-('setting', 'a:6:{s:9:"copyright";a:1:{s:6:"slides";a:3:{i:0;s:58:"https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg";i:1;s:58:"https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg";i:2;s:58:"https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg";}}s:8:"authmode";i:1;s:5:"close";a:2:{s:6:"status";s:1:"0";s:6:"reason";s:0:"";}s:8:"register";a:4:{s:4:"open";i:1;s:6:"verify";i:0;s:4:"code";i:1;s:7:"groupid";i:1;}s:4:"site";a:5:{s:3:"key";s:5:"67240";s:5:"token";s:32:"ebozsgoc2jiavyk1popg5xuq5jno2eae";s:3:"url";s:27:"http://123.207.8.156/weixin";s:7:"version";s:3:"0.8";s:15:"profile_perfect";b:1;}s:7:"cloudip";a:2:{s:2:"ip";s:13:"123.206.1.158";s:6:"expire";i:1475080790;}}'),
+('setting', 'a:6:{s:9:"copyright";a:1:{s:6:"slides";a:3:{i:0;s:58:"https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg";i:1;s:58:"https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg";i:2;s:58:"https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg";}}s:8:"authmode";i:1;s:5:"close";a:2:{s:6:"status";s:1:"0";s:6:"reason";s:0:"";}s:8:"register";a:4:{s:4:"open";i:1;s:6:"verify";i:0;s:4:"code";i:1;s:7:"groupid";i:1;}s:4:"site";a:5:{s:3:"key";s:5:"67240";s:5:"token";s:32:"ebozsgoc2jiavyk1popg5xuq5jno2eae";s:3:"url";s:27:"http://123.207.8.156/weixin";s:7:"version";s:3:"0.8";s:15:"profile_perfect";b:1;}s:7:"cloudip";a:2:{s:2:"ip";s:14:"222.161.220.33";s:6:"expire";i:1478942346;}}'),
 ('system_frame', 'a:5:{s:8:"platform";a:3:{i:0;a:2:{s:5:"title";s:12:"基本功能";s:5:"items";a:9:{i:0;a:5:{s:2:"id";s:1:"3";s:5:"title";s:12:"文字回复";s:3:"url";s:38:"./index.php?c=platform&a=reply&m=basic";s:15:"permission_name";s:20:"platform_reply_basic";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:46:"./index.php?c=platform&a=reply&do=post&m=basic";}}i:1;a:5:{s:2:"id";s:1:"4";s:5:"title";s:12:"图文回复";s:3:"url";s:37:"./index.php?c=platform&a=reply&m=news";s:15:"permission_name";s:19:"platform_reply_news";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:45:"./index.php?c=platform&a=reply&do=post&m=news";}}i:2;a:5:{s:2:"id";s:1:"5";s:5:"title";s:12:"音乐回复";s:3:"url";s:38:"./index.php?c=platform&a=reply&m=music";s:15:"permission_name";s:20:"platform_reply_music";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:46:"./index.php?c=platform&a=reply&do=post&m=music";}}i:3;a:5:{s:2:"id";s:1:"6";s:5:"title";s:12:"图片回复";s:3:"url";s:39:"./index.php?c=platform&a=reply&m=images";s:15:"permission_name";s:21:"platform_reply_images";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:47:"./index.php?c=platform&a=reply&do=post&m=images";}}i:4;a:5:{s:2:"id";s:1:"7";s:5:"title";s:12:"语音回复";s:3:"url";s:38:"./index.php?c=platform&a=reply&m=voice";s:15:"permission_name";s:20:"platform_reply_voice";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:46:"./index.php?c=platform&a=reply&do=post&m=voice";}}i:5;a:5:{s:2:"id";s:1:"8";s:5:"title";s:12:"视频回复";s:3:"url";s:38:"./index.php?c=platform&a=reply&m=video";s:15:"permission_name";s:20:"platform_reply_video";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:46:"./index.php?c=platform&a=reply&do=post&m=video";}}i:6;a:5:{s:2:"id";s:1:"9";s:5:"title";s:18:"微信卡券回复";s:3:"url";s:39:"./index.php?c=platform&a=reply&m=wxcard";s:15:"permission_name";s:21:"platform_reply_wxcard";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:47:"./index.php?c=platform&a=reply&do=post&m=wxcard";}}i:7;a:5:{s:2:"id";s:2:"10";s:5:"title";s:21:"自定义接口回复";s:3:"url";s:40:"./index.php?c=platform&a=reply&m=userapi";s:15:"permission_name";s:22:"platform_reply_userapi";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:48:"./index.php?c=platform&a=reply&do=post&m=userapi";}}i:8;a:4:{s:2:"id";s:2:"11";s:5:"title";s:12:"系统回复";s:3:"url";s:44:"./index.php?c=platform&a=special&do=display&";s:15:"permission_name";s:21:"platform_reply_system";}}}i:1;a:2:{s:5:"title";s:12:"高级功能";s:5:"items";a:6:{i:0;a:4:{s:2:"id";s:2:"13";s:5:"title";s:18:"常用服务接入";s:3:"url";s:43:"./index.php?c=platform&a=service&do=switch&";s:15:"permission_name";s:16:"platform_service";}i:1;a:4:{s:2:"id";s:2:"14";s:5:"title";s:15:"自定义菜单";s:3:"url";s:30:"./index.php?c=platform&a=menu&";s:15:"permission_name";s:13:"platform_menu";}i:2;a:4:{s:2:"id";s:2:"15";s:5:"title";s:18:"特殊消息回复";s:3:"url";s:44:"./index.php?c=platform&a=special&do=message&";s:15:"permission_name";s:16:"platform_special";}i:3;a:4:{s:2:"id";s:2:"16";s:5:"title";s:15:"二维码管理";s:3:"url";s:28:"./index.php?c=platform&a=qr&";s:15:"permission_name";s:11:"platform_qr";}i:4;a:4:{s:2:"id";s:2:"17";s:5:"title";s:15:"多客服接入";s:3:"url";s:39:"./index.php?c=platform&a=reply&m=custom";s:15:"permission_name";s:21:"platform_reply_custom";}i:5;a:4:{s:2:"id";s:2:"18";s:5:"title";s:18:"长链接二维码";s:3:"url";s:32:"./index.php?c=platform&a=url2qr&";s:15:"permission_name";s:15:"platform_url2qr";}}}i:2;a:2:{s:5:"title";s:12:"数据统计";s:5:"items";a:4:{i:0;a:4:{s:2:"id";s:2:"20";s:5:"title";s:12:"聊天记录";s:3:"url";s:41:"./index.php?c=platform&a=stat&do=history&";s:15:"permission_name";s:21:"platform_stat_history";}i:1;a:4:{s:2:"id";s:2:"21";s:5:"title";s:24:"回复规则使用情况";s:3:"url";s:38:"./index.php?c=platform&a=stat&do=rule&";s:15:"permission_name";s:18:"platform_stat_rule";}i:2;a:4:{s:2:"id";s:2:"22";s:5:"title";s:21:"关键字命中情况";s:3:"url";s:41:"./index.php?c=platform&a=stat&do=keyword&";s:15:"permission_name";s:21:"platform_stat_keyword";}i:3;a:4:{s:2:"id";s:2:"23";s:5:"title";s:6:"参数";s:3:"url";s:41:"./index.php?c=platform&a=stat&do=setting&";s:15:"permission_name";s:21:"platform_stat_setting";}}}}s:4:"site";a:3:{i:0;a:2:{s:5:"title";s:12:"微站管理";s:5:"items";a:3:{i:0;a:5:{s:2:"id";s:2:"26";s:5:"title";s:12:"站点管理";s:3:"url";s:38:"./index.php?c=site&a=multi&do=display&";s:15:"permission_name";s:18:"site_multi_display";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:35:"./index.php?c=site&a=multi&do=post&";}}i:1;a:4:{s:2:"id";s:2:"29";s:5:"title";s:12:"模板管理";s:3:"url";s:39:"./index.php?c=site&a=style&do=template&";s:15:"permission_name";s:19:"site_style_template";}i:2;a:4:{s:2:"id";s:2:"30";s:5:"title";s:18:"模块模板扩展";s:3:"url";s:37:"./index.php?c=site&a=style&do=module&";s:15:"permission_name";s:17:"site_style_module";}}}i:1;a:2:{s:5:"title";s:18:"特殊页面管理";s:5:"items";a:2:{i:0;a:4:{s:2:"id";s:2:"32";s:5:"title";s:12:"会员中心";s:3:"url";s:34:"./index.php?c=site&a=editor&do=uc&";s:15:"permission_name";s:14:"site_editor_uc";}i:1;a:5:{s:2:"id";s:2:"33";s:5:"title";s:12:"专题页面";s:3:"url";s:36:"./index.php?c=site&a=editor&do=page&";s:15:"permission_name";s:16:"site_editor_page";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:38:"./index.php?c=site&a=editor&do=design&";}}}}i:2;a:2:{s:5:"title";s:12:"功能组件";s:5:"items";a:2:{i:0;a:4:{s:2:"id";s:2:"35";s:5:"title";s:12:"分类设置";s:3:"url";s:30:"./index.php?c=site&a=category&";s:15:"permission_name";s:13:"site_category";}i:1;a:4:{s:2:"id";s:2:"36";s:5:"title";s:12:"文章管理";s:3:"url";s:29:"./index.php?c=site&a=article&";s:15:"permission_name";s:12:"site_article";}}}}s:2:"mc";a:8:{i:0;a:2:{s:5:"title";s:12:"粉丝管理";s:5:"items";a:2:{i:0;a:4:{s:2:"id";s:2:"39";s:5:"title";s:12:"粉丝分组";s:3:"url";s:28:"./index.php?c=mc&a=fangroup&";s:15:"permission_name";s:11:"mc_fangroup";}i:1;a:4:{s:2:"id";s:2:"40";s:5:"title";s:6:"粉丝";s:3:"url";s:24:"./index.php?c=mc&a=fans&";s:15:"permission_name";s:7:"mc_fans";}}}i:1;a:2:{s:5:"title";s:12:"会员中心";s:5:"items";a:3:{i:0;a:4:{s:2:"id";s:2:"42";s:5:"title";s:21:"会员中心关键字";s:3:"url";s:37:"./index.php?c=platform&a=cover&do=mc&";s:15:"permission_name";s:17:"platform_cover_mc";}i:1;a:5:{s:2:"id";s:2:"43";s:5:"title";s:6:"会员";s:3:"url";s:25:"./index.php?c=mc&a=member";s:15:"permission_name";s:9:"mc_member";s:6:"append";a:2:{s:5:"title";s:26:"<i class="fa fa-plus"></i>";s:3:"url";s:32:"./index.php?c=mc&a=member&do=add";}}i:2;a:4:{s:2:"id";s:2:"44";s:5:"title";s:9:"会员组";s:3:"url";s:25:"./index.php?c=mc&a=group&";s:15:"permission_name";s:8:"mc_group";}}}i:2;a:2:{s:5:"title";s:15:"会员卡管理";s:5:"items";a:4:{i:0;a:4:{s:2:"id";s:2:"46";s:5:"title";s:18:"会员卡关键字";s:3:"url";s:39:"./index.php?c=platform&a=cover&do=card&";s:15:"permission_name";s:19:"platform_cover_card";}i:1;a:4:{s:2:"id";s:2:"47";s:5:"title";s:15:"会员卡管理";s:3:"url";s:33:"./index.php?c=mc&a=card&do=manage";s:15:"permission_name";s:14:"mc_card_manage";}i:2;a:4:{s:2:"id";s:2:"48";s:5:"title";s:15:"会员卡设置";s:3:"url";s:33:"./index.php?c=mc&a=card&do=editor";s:15:"permission_name";s:14:"mc_card_editor";}i:3;a:4:{s:2:"id";s:2:"49";s:5:"title";s:21:"会员卡其他功能";s:3:"url";s:32:"./index.php?c=mc&a=card&do=other";s:15:"permission_name";s:13:"mc_card_other";}}}i:3;a:2:{s:5:"title";s:12:"积分兑换";s:5:"items";a:2:{i:0;a:4:{s:2:"id";s:2:"51";s:5:"title";s:12:"卡券兑换";s:3:"url";s:56:"./index.php?c=activity&a=exchange&do=display&type=coupon";s:15:"permission_name";s:24:"activity_coupon_exchange";}i:1;a:4:{s:2:"id";s:2:"52";s:5:"title";s:18:"真实物品兑换";s:3:"url";s:55:"./index.php?c=activity&a=exchange&do=display&type=goods";s:15:"permission_name";s:22:"activity_goods_display";}}}i:4;a:2:{s:5:"title";s:19:"微信素材&群发";s:5:"items";a:2:{i:0;a:4:{s:2:"id";s:2:"54";s:5:"title";s:13:"素材&群发";s:3:"url";s:32:"./index.php?c=material&a=display";s:15:"permission_name";s:16:"material_display";}i:1;a:4:{s:2:"id";s:2:"55";s:5:"title";s:12:"定时群发";s:3:"url";s:29:"./index.php?c=material&a=mass";s:15:"permission_name";s:13:"material_mass";}}}i:5;a:2:{s:5:"title";s:12:"卡券管理";s:5:"items";a:3:{i:0;a:4:{s:2:"id";s:2:"57";s:5:"title";s:12:"卡券列表";s:3:"url";s:42:"./index.php?c=activity&a=coupon&do=display";s:15:"permission_name";s:23:"activity_coupon_display";}i:1;a:4:{s:2:"id";s:2:"58";s:5:"title";s:12:"卡券营销";s:3:"url";s:29:"index.php?c=activity&a=market";s:15:"permission_name";s:22:"activity_coupon_market";}i:2;a:4:{s:2:"id";s:2:"59";s:5:"title";s:12:"卡券核销";s:3:"url";s:52:"./index.php?c=activity&a=consume&do=display&status=2";s:15:"permission_name";s:23:"activity_consume_coupon";}}}i:6;a:2:{s:5:"title";s:9:"工作台";s:5:"items";a:4:{i:0;a:4:{s:2:"id";s:2:"61";s:5:"title";s:12:"门店列表";s:3:"url";s:30:"./index.php?c=activity&a=store";s:15:"permission_name";s:19:"activity_store_list";}i:1;a:4:{s:2:"id";s:2:"62";s:5:"title";s:12:"店员列表";s:3:"url";s:30:"./index.php?c=activity&a=clerk";s:15:"permission_name";s:19:"activity_clerk_list";}i:2;a:4:{s:2:"id";s:2:"63";s:5:"title";s:18:"微信刷卡收款";s:3:"url";s:40:"./index.php?c=paycenter&a=wxmicro&do=pay";s:15:"permission_name";s:21:"paycenter_wxmicro_pay";}i:3;a:4:{s:2:"id";s:2:"64";s:5:"title";s:21:"店员操作关键字";s:3:"url";s:39:"./index.php?c=platform&a=cover&do=clerk";s:15:"permission_name";s:15:"paycenter_clerk";}}}i:7;a:2:{s:5:"title";s:12:"统计中心";s:5:"items";a:5:{i:0;a:4:{s:2:"id";s:2:"66";s:5:"title";s:18:"会员积分统计";s:3:"url";s:28:"./index.php?c=stat&a=credit1";s:15:"permission_name";s:12:"stat_credit1";}i:1;a:4:{s:2:"id";s:2:"67";s:5:"title";s:18:"会员余额统计";s:3:"url";s:28:"./index.php?c=stat&a=credit2";s:15:"permission_name";s:12:"stat_credit2";}i:2;a:4:{s:2:"id";s:2:"68";s:5:"title";s:24:"会员现金消费统计";s:3:"url";s:25:"./index.php?c=stat&a=cash";s:15:"permission_name";s:9:"stat_cash";}i:3;a:4:{s:2:"id";s:2:"69";s:5:"title";s:15:"会员卡统计";s:3:"url";s:25:"./index.php?c=stat&a=card";s:15:"permission_name";s:9:"stat_card";}i:4;a:4:{s:2:"id";s:2:"70";s:5:"title";s:21:"收银台收款统计";s:3:"url";s:30:"./index.php?c=stat&a=paycenter";s:15:"permission_name";s:14:"stat_paycenter";}}}}s:7:"setting";a:3:{i:0;a:2:{s:5:"title";s:15:"公众号选项";s:5:"items";a:7:{i:0;a:4:{s:2:"id";s:2:"73";s:5:"title";s:12:"支付参数";s:3:"url";s:32:"./index.php?c=profile&a=payment&";s:15:"permission_name";s:15:"profile_payment";}i:1;a:4:{s:2:"id";s:2:"74";s:5:"title";s:19:"借用 oAuth 权限";s:3:"url";s:37:"./index.php?c=mc&a=passport&do=oauth&";s:15:"permission_name";s:17:"mc_passport_oauth";}i:2;a:4:{s:2:"id";s:2:"75";s:5:"title";s:22:"借用 JS 分享权限";s:3:"url";s:31:"./index.php?c=profile&a=jsauth&";s:15:"permission_name";s:14:"profile_jsauth";}i:3;a:4:{s:2:"id";s:2:"76";s:5:"title";s:18:"会员字段管理";s:3:"url";s:25:"./index.php?c=mc&a=fields";s:15:"permission_name";s:9:"mc_fields";}i:4;a:4:{s:2:"id";s:2:"77";s:5:"title";s:18:"微信通知设置";s:3:"url";s:28:"./index.php?c=mc&a=tplnotice";s:15:"permission_name";s:12:"mc_tplnotice";}i:5;a:4:{s:2:"id";s:2:"78";s:5:"title";s:21:"工作台菜单设置";s:3:"url";s:32:"./index.php?c=profile&a=deskmenu";s:15:"permission_name";s:16:"profile_deskmenu";}i:6;a:4:{s:2:"id";s:2:"79";s:5:"title";s:18:"会员扩展功能";s:3:"url";s:25:"./index.php?c=mc&a=plugin";s:15:"permission_name";s:9:"mc_plugin";}}}i:1;a:2:{s:5:"title";s:21:"会员及粉丝选项";s:5:"items";a:5:{i:0;a:4:{s:2:"id";s:2:"81";s:5:"title";s:12:"积分设置";s:3:"url";s:26:"./index.php?c=mc&a=credit&";s:15:"permission_name";s:9:"mc_credit";}i:1;a:4:{s:2:"id";s:2:"82";s:5:"title";s:12:"注册设置";s:3:"url";s:40:"./index.php?c=mc&a=passport&do=passport&";s:15:"permission_name";s:20:"mc_passport_passport";}i:2;a:4:{s:2:"id";s:2:"83";s:5:"title";s:18:"粉丝同步设置";s:3:"url";s:36:"./index.php?c=mc&a=passport&do=sync&";s:15:"permission_name";s:16:"mc_passport_sync";}i:3;a:4:{s:2:"id";s:2:"84";s:5:"title";s:14:"UC站点整合";s:3:"url";s:22:"./index.php?c=mc&a=uc&";s:15:"permission_name";s:5:"mc_uc";}i:4;a:4:{s:2:"id";s:2:"85";s:5:"title";s:18:"邮件通知参数";s:3:"url";s:30:"./index.php?c=profile&a=notify";s:15:"permission_name";s:14:"profile_notify";}}}i:2;a:1:{s:5:"title";s:18:"其他功能选项";}}s:3:"ext";a:1:{i:0;a:2:{s:5:"title";s:6:"管理";s:5:"items";a:1:{i:0;a:4:{s:2:"id";s:2:"89";s:5:"title";s:18:"扩展功能管理";s:3:"url";s:31:"./index.php?c=profile&a=module&";s:15:"permission_name";s:14:"profile_module";}}}}}'),
 ('userbasefields', 'a:44:{s:7:"uniacid";s:17:"同一公众号id";s:7:"groupid";s:8:"分组id";s:7:"credit1";s:6:"积分";s:7:"credit2";s:6:"余额";s:7:"credit3";s:19:"预留积分类型3";s:7:"credit4";s:19:"预留积分类型4";s:7:"credit5";s:19:"预留积分类型5";s:7:"credit6";s:19:"预留积分类型6";s:10:"createtime";s:12:"加入时间";s:6:"mobile";s:12:"手机号码";s:5:"email";s:12:"电子邮箱";s:8:"realname";s:12:"真实姓名";s:8:"nickname";s:6:"昵称";s:6:"avatar";s:6:"头像";s:2:"qq";s:5:"QQ号";s:6:"gender";s:6:"性别";s:5:"birth";s:6:"生日";s:13:"constellation";s:6:"星座";s:6:"zodiac";s:6:"生肖";s:9:"telephone";s:12:"固定电话";s:6:"idcard";s:12:"证件号码";s:9:"studentid";s:6:"学号";s:5:"grade";s:6:"班级";s:7:"address";s:6:"地址";s:7:"zipcode";s:6:"邮编";s:11:"nationality";s:6:"国籍";s:6:"reside";s:9:"居住地";s:14:"graduateschool";s:12:"毕业学校";s:7:"company";s:6:"公司";s:9:"education";s:6:"学历";s:10:"occupation";s:6:"职业";s:8:"position";s:6:"职位";s:7:"revenue";s:9:"年收入";s:15:"affectivestatus";s:12:"情感状态";s:10:"lookingfor";s:13:" 交友目的";s:9:"bloodtype";s:6:"血型";s:6:"height";s:6:"身高";s:6:"weight";s:6:"体重";s:6:"alipay";s:15:"支付宝帐号";s:3:"msn";s:3:"MSN";s:6:"taobao";s:12:"阿里旺旺";s:4:"site";s:6:"主页";s:3:"bio";s:12:"自我介绍";s:8:"interest";s:12:"兴趣爱好";}'),
 ('usersfields', 'a:45:{s:8:"realname";s:12:"真实姓名";s:8:"nickname";s:6:"昵称";s:6:"avatar";s:6:"头像";s:2:"qq";s:5:"QQ号";s:6:"mobile";s:12:"手机号码";s:3:"vip";s:9:"VIP级别";s:6:"gender";s:6:"性别";s:9:"birthyear";s:12:"出生生日";s:13:"constellation";s:6:"星座";s:6:"zodiac";s:6:"生肖";s:9:"telephone";s:12:"固定电话";s:6:"idcard";s:12:"证件号码";s:9:"studentid";s:6:"学号";s:5:"grade";s:6:"班级";s:7:"address";s:12:"邮寄地址";s:7:"zipcode";s:6:"邮编";s:11:"nationality";s:6:"国籍";s:14:"resideprovince";s:12:"居住地址";s:14:"graduateschool";s:12:"毕业学校";s:7:"company";s:6:"公司";s:9:"education";s:6:"学历";s:10:"occupation";s:6:"职业";s:8:"position";s:6:"职位";s:7:"revenue";s:9:"年收入";s:15:"affectivestatus";s:12:"情感状态";s:10:"lookingfor";s:13:" 交友目的";s:9:"bloodtype";s:6:"血型";s:6:"height";s:6:"身高";s:6:"weight";s:6:"体重";s:6:"alipay";s:15:"支付宝帐号";s:3:"msn";s:3:"MSN";s:5:"email";s:12:"电子邮箱";s:6:"taobao";s:12:"阿里旺旺";s:4:"site";s:6:"主页";s:3:"bio";s:12:"自我介绍";s:8:"interest";s:12:"兴趣爱好";s:7:"uniacid";s:17:"同一公众号id";s:7:"groupid";s:8:"分组id";s:7:"credit1";s:6:"积分";s:7:"credit2";s:6:"余额";s:7:"credit3";s:19:"预留积分类型3";s:7:"credit4";s:19:"预留积分类型4";s:7:"credit5";s:19:"预留积分类型5";s:7:"credit6";s:19:"预留积分类型6";s:10:"createtime";s:12:"加入时间";}'),
 ('module_receive_enable', 'a:0:{}'),
-('unimodules:1:', 'a:13:{s:5:"basic";a:19:{s:3:"mid";s:1:"1";s:4:"name";s:5:"basic";s:4:"type";s:6:"system";s:5:"title";s:18:"基本文字回复";s:7:"version";s:3:"1.0";s:7:"ability";s:24:"和您进行简单对话";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:4:"news";a:19:{s:3:"mid";s:1:"2";s:4:"name";s:4:"news";s:4:"type";s:6:"system";s:5:"title";s:24:"基本混合图文回复";s:7:"version";s:3:"1.0";s:7:"ability";s:33:"为你提供生动的图文资讯";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"music";a:19:{s:3:"mid";s:1:"3";s:4:"name";s:5:"music";s:4:"type";s:6:"system";s:5:"title";s:18:"基本音乐回复";s:7:"version";s:3:"1.0";s:7:"ability";s:39:"提供语音、音乐等音频类回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:7:"userapi";a:19:{s:3:"mid";s:1:"4";s:4:"name";s:7:"userapi";s:4:"type";s:6:"system";s:5:"title";s:21:"自定义接口回复";s:7:"version";s:3:"1.1";s:7:"ability";s:33:"更方便的第三方接口设置";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:8:"recharge";a:19:{s:3:"mid";s:1:"5";s:4:"name";s:8:"recharge";s:4:"type";s:6:"system";s:5:"title";s:24:"会员中心充值模块";s:7:"version";s:3:"1.0";s:7:"ability";s:24:"提供会员充值功能";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"custom";a:19:{s:3:"mid";s:1:"6";s:4:"name";s:6:"custom";s:4:"type";s:6:"system";s:5:"title";s:15:"多客服转接";s:7:"version";s:5:"1.0.0";s:7:"ability";s:36:"用来接入腾讯的多客服系统";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:17:"http://bbs.we7.cc";s:8:"settings";s:1:"0";s:10:"subscribes";a:0:{}s:7:"handles";a:6:{i:0;s:5:"image";i:1;s:5:"voice";i:2;s:5:"video";i:3;s:8:"location";i:4;s:4:"link";i:5;s:4:"text";}s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"images";a:19:{s:3:"mid";s:1:"7";s:4:"name";s:6:"images";s:4:"type";s:6:"system";s:5:"title";s:18:"基本图片回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供图片回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"video";a:19:{s:3:"mid";s:1:"8";s:4:"name";s:5:"video";s:4:"type";s:6:"system";s:5:"title";s:18:"基本视频回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供图片回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"voice";a:19:{s:3:"mid";s:1:"9";s:4:"name";s:5:"voice";s:4:"type";s:6:"system";s:5:"title";s:18:"基本语音回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供语音回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"chats";a:19:{s:3:"mid";s:2:"10";s:4:"name";s:5:"chats";s:4:"type";s:6:"system";s:5:"title";s:18:"发送客服消息";s:7:"version";s:3:"1.0";s:7:"ability";s:77:"公众号可以在粉丝最后发送消息的48小时内无限制发送消息";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"wxcard";a:19:{s:3:"mid";s:2:"11";s:4:"name";s:6:"wxcard";s:4:"type";s:6:"system";s:5:"title";s:18:"微信卡券回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"微信卡券回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:9:"paycenter";a:19:{s:3:"mid";s:2:"12";s:4:"name";s:9:"paycenter";s:4:"type";s:6:"system";s:5:"title";s:9:"收银台";s:7:"version";s:3:"1.0";s:7:"ability";s:9:"收银台";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:4:"core";a:5:{s:5:"title";s:24:"系统事件处理模块";s:4:"name";s:4:"core";s:8:"issystem";i:1;s:7:"enabled";i:1;s:9:"isdisplay";i:0;}}'),
-('unimodules:1:1', 'a:13:{s:5:"basic";a:19:{s:3:"mid";s:1:"1";s:4:"name";s:5:"basic";s:4:"type";s:6:"system";s:5:"title";s:18:"基本文字回复";s:7:"version";s:3:"1.0";s:7:"ability";s:24:"和您进行简单对话";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:4:"news";a:19:{s:3:"mid";s:1:"2";s:4:"name";s:4:"news";s:4:"type";s:6:"system";s:5:"title";s:24:"基本混合图文回复";s:7:"version";s:3:"1.0";s:7:"ability";s:33:"为你提供生动的图文资讯";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"music";a:19:{s:3:"mid";s:1:"3";s:4:"name";s:5:"music";s:4:"type";s:6:"system";s:5:"title";s:18:"基本音乐回复";s:7:"version";s:3:"1.0";s:7:"ability";s:39:"提供语音、音乐等音频类回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:7:"userapi";a:19:{s:3:"mid";s:1:"4";s:4:"name";s:7:"userapi";s:4:"type";s:6:"system";s:5:"title";s:21:"自定义接口回复";s:7:"version";s:3:"1.1";s:7:"ability";s:33:"更方便的第三方接口设置";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:8:"recharge";a:19:{s:3:"mid";s:1:"5";s:4:"name";s:8:"recharge";s:4:"type";s:6:"system";s:5:"title";s:24:"会员中心充值模块";s:7:"version";s:3:"1.0";s:7:"ability";s:24:"提供会员充值功能";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"custom";a:19:{s:3:"mid";s:1:"6";s:4:"name";s:6:"custom";s:4:"type";s:6:"system";s:5:"title";s:15:"多客服转接";s:7:"version";s:5:"1.0.0";s:7:"ability";s:36:"用来接入腾讯的多客服系统";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:17:"http://bbs.we7.cc";s:8:"settings";s:1:"0";s:10:"subscribes";a:0:{}s:7:"handles";a:6:{i:0;s:5:"image";i:1;s:5:"voice";i:2;s:5:"video";i:3;s:8:"location";i:4;s:4:"link";i:5;s:4:"text";}s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"images";a:19:{s:3:"mid";s:1:"7";s:4:"name";s:6:"images";s:4:"type";s:6:"system";s:5:"title";s:18:"基本图片回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供图片回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"video";a:19:{s:3:"mid";s:1:"8";s:4:"name";s:5:"video";s:4:"type";s:6:"system";s:5:"title";s:18:"基本视频回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供图片回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"voice";a:19:{s:3:"mid";s:1:"9";s:4:"name";s:5:"voice";s:4:"type";s:6:"system";s:5:"title";s:18:"基本语音回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供语音回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"chats";a:19:{s:3:"mid";s:2:"10";s:4:"name";s:5:"chats";s:4:"type";s:6:"system";s:5:"title";s:18:"发送客服消息";s:7:"version";s:3:"1.0";s:7:"ability";s:77:"公众号可以在粉丝最后发送消息的48小时内无限制发送消息";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"wxcard";a:19:{s:3:"mid";s:2:"11";s:4:"name";s:6:"wxcard";s:4:"type";s:6:"system";s:5:"title";s:18:"微信卡券回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"微信卡券回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:9:"paycenter";a:19:{s:3:"mid";s:2:"12";s:4:"name";s:9:"paycenter";s:4:"type";s:6:"system";s:5:"title";s:9:"收银台";s:7:"version";s:3:"1.0";s:7:"ability";s:9:"收银台";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:4:"core";a:5:{s:5:"title";s:24:"系统事件处理模块";s:4:"name";s:4:"core";s:8:"issystem";i:1;s:7:"enabled";i:1;s:9:"isdisplay";i:0;}}'),
-('accesstoken:1', 'a:2:{s:5:"token";s:138:"wiV-HE9uQy47CrUP8onrobiw99CS65BsPCy4P5Gkolz-xhtTyaF5-moFLAYBgmyc6ZtfTE_sXR2DoiBMVvCsZbEGtbVXa9Opokdl31FfI6kt6XkgLJPbW3O2rKS1JdvdLCIgAEAEVB";s:6:"expire";i:1473674796;}'),
-('stat:todaylock:1', 'a:1:{s:6:"expire";i:1474452822;}'),
-('upgrade', 'a:2:{s:7:"upgrade";b:0;s:10:"lastupdate";i:1474879236;}'),
+('unimodules:1:', 'a:14:{s:5:"basic";a:19:{s:3:"mid";s:1:"1";s:4:"name";s:5:"basic";s:4:"type";s:6:"system";s:5:"title";s:18:"基本文字回复";s:7:"version";s:3:"1.0";s:7:"ability";s:24:"和您进行简单对话";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:4:"news";a:19:{s:3:"mid";s:1:"2";s:4:"name";s:4:"news";s:4:"type";s:6:"system";s:5:"title";s:24:"基本混合图文回复";s:7:"version";s:3:"1.0";s:7:"ability";s:33:"为你提供生动的图文资讯";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"music";a:19:{s:3:"mid";s:1:"3";s:4:"name";s:5:"music";s:4:"type";s:6:"system";s:5:"title";s:18:"基本音乐回复";s:7:"version";s:3:"1.0";s:7:"ability";s:39:"提供语音、音乐等音频类回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:7:"userapi";a:19:{s:3:"mid";s:1:"4";s:4:"name";s:7:"userapi";s:4:"type";s:6:"system";s:5:"title";s:21:"自定义接口回复";s:7:"version";s:3:"1.1";s:7:"ability";s:33:"更方便的第三方接口设置";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:8:"recharge";a:19:{s:3:"mid";s:1:"5";s:4:"name";s:8:"recharge";s:4:"type";s:6:"system";s:5:"title";s:24:"会员中心充值模块";s:7:"version";s:3:"1.0";s:7:"ability";s:24:"提供会员充值功能";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"custom";a:19:{s:3:"mid";s:1:"6";s:4:"name";s:6:"custom";s:4:"type";s:6:"system";s:5:"title";s:15:"多客服转接";s:7:"version";s:5:"1.0.0";s:7:"ability";s:36:"用来接入腾讯的多客服系统";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:17:"http://bbs.we7.cc";s:8:"settings";s:1:"0";s:10:"subscribes";a:0:{}s:7:"handles";a:6:{i:0;s:5:"image";i:1;s:5:"voice";i:2;s:5:"video";i:3;s:8:"location";i:4;s:4:"link";i:5;s:4:"text";}s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"images";a:19:{s:3:"mid";s:1:"7";s:4:"name";s:6:"images";s:4:"type";s:6:"system";s:5:"title";s:18:"基本图片回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供图片回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"video";a:19:{s:3:"mid";s:1:"8";s:4:"name";s:5:"video";s:4:"type";s:6:"system";s:5:"title";s:18:"基本视频回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供图片回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"voice";a:19:{s:3:"mid";s:1:"9";s:4:"name";s:5:"voice";s:4:"type";s:6:"system";s:5:"title";s:18:"基本语音回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供语音回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"chats";a:19:{s:3:"mid";s:2:"10";s:4:"name";s:5:"chats";s:4:"type";s:6:"system";s:5:"title";s:18:"发送客服消息";s:7:"version";s:3:"1.0";s:7:"ability";s:77:"公众号可以在粉丝最后发送消息的48小时内无限制发送消息";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"wxcard";a:19:{s:3:"mid";s:2:"11";s:4:"name";s:6:"wxcard";s:4:"type";s:6:"system";s:5:"title";s:18:"微信卡券回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"微信卡券回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:9:"paycenter";a:19:{s:3:"mid";s:2:"12";s:4:"name";s:9:"paycenter";s:4:"type";s:6:"system";s:5:"title";s:9:"收银台";s:7:"version";s:3:"1.0";s:7:"ability";s:9:"收银台";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:13:"ewei_shopping";a:19:{s:3:"mid";s:2:"13";s:4:"name";s:13:"ewei_shopping";s:4:"type";s:8:"business";s:5:"title";s:9:"微商城";s:7:"version";s:5:"6.9.6";s:7:"ability";s:9:"微商城";s:6:"author";s:20:"WeEngine Team & ewei";s:3:"url";s:0:"";s:8:"settings";s:1:"2";s:10:"subscribes";a:0:{}s:7:"handles";a:1:{i:0;s:4:"text";}s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"0";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:2:"N;";s:7:"enabled";s:1:"1";s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:4:"core";a:5:{s:5:"title";s:24:"系统事件处理模块";s:4:"name";s:4:"core";s:8:"issystem";i:1;s:7:"enabled";i:1;s:9:"isdisplay";i:0;}}'),
+('unimodules:1:1', 'a:14:{s:5:"basic";a:19:{s:3:"mid";s:1:"1";s:4:"name";s:5:"basic";s:4:"type";s:6:"system";s:5:"title";s:18:"基本文字回复";s:7:"version";s:3:"1.0";s:7:"ability";s:24:"和您进行简单对话";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:4:"news";a:19:{s:3:"mid";s:1:"2";s:4:"name";s:4:"news";s:4:"type";s:6:"system";s:5:"title";s:24:"基本混合图文回复";s:7:"version";s:3:"1.0";s:7:"ability";s:33:"为你提供生动的图文资讯";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"music";a:19:{s:3:"mid";s:1:"3";s:4:"name";s:5:"music";s:4:"type";s:6:"system";s:5:"title";s:18:"基本音乐回复";s:7:"version";s:3:"1.0";s:7:"ability";s:39:"提供语音、音乐等音频类回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:7:"userapi";a:19:{s:3:"mid";s:1:"4";s:4:"name";s:7:"userapi";s:4:"type";s:6:"system";s:5:"title";s:21:"自定义接口回复";s:7:"version";s:3:"1.1";s:7:"ability";s:33:"更方便的第三方接口设置";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:8:"recharge";a:19:{s:3:"mid";s:1:"5";s:4:"name";s:8:"recharge";s:4:"type";s:6:"system";s:5:"title";s:24:"会员中心充值模块";s:7:"version";s:3:"1.0";s:7:"ability";s:24:"提供会员充值功能";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"custom";a:19:{s:3:"mid";s:1:"6";s:4:"name";s:6:"custom";s:4:"type";s:6:"system";s:5:"title";s:15:"多客服转接";s:7:"version";s:5:"1.0.0";s:7:"ability";s:36:"用来接入腾讯的多客服系统";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:17:"http://bbs.we7.cc";s:8:"settings";s:1:"0";s:10:"subscribes";a:0:{}s:7:"handles";a:6:{i:0;s:5:"image";i:1;s:5:"voice";i:2;s:5:"video";i:3;s:8:"location";i:4;s:4:"link";i:5;s:4:"text";}s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"images";a:19:{s:3:"mid";s:1:"7";s:4:"name";s:6:"images";s:4:"type";s:6:"system";s:5:"title";s:18:"基本图片回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供图片回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"video";a:19:{s:3:"mid";s:1:"8";s:4:"name";s:5:"video";s:4:"type";s:6:"system";s:5:"title";s:18:"基本视频回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供图片回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"voice";a:19:{s:3:"mid";s:1:"9";s:4:"name";s:5:"voice";s:4:"type";s:6:"system";s:5:"title";s:18:"基本语音回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"提供语音回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:5:"chats";a:19:{s:3:"mid";s:2:"10";s:4:"name";s:5:"chats";s:4:"type";s:6:"system";s:5:"title";s:18:"发送客服消息";s:7:"version";s:3:"1.0";s:7:"ability";s:77:"公众号可以在粉丝最后发送消息的48小时内无限制发送消息";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:6:"wxcard";a:19:{s:3:"mid";s:2:"11";s:4:"name";s:6:"wxcard";s:4:"type";s:6:"system";s:5:"title";s:18:"微信卡券回复";s:7:"version";s:3:"1.0";s:7:"ability";s:18:"微信卡券回复";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:9:"paycenter";a:19:{s:3:"mid";s:2:"12";s:4:"name";s:9:"paycenter";s:4:"type";s:6:"system";s:5:"title";s:9:"收银台";s:7:"version";s:3:"1.0";s:7:"ability";s:9:"收银台";s:6:"author";s:13:"WeEngine Team";s:3:"url";s:18:"http://www.we7.cc/";s:8:"settings";s:1:"0";s:10:"subscribes";s:0:"";s:7:"handles";s:0:"";s:12:"isrulefields";s:1:"1";s:8:"issystem";s:1:"1";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:0:"";s:7:"enabled";i:1;s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:13:"ewei_shopping";a:19:{s:3:"mid";s:2:"13";s:4:"name";s:13:"ewei_shopping";s:4:"type";s:8:"business";s:5:"title";s:9:"微商城";s:7:"version";s:5:"6.9.6";s:7:"ability";s:9:"微商城";s:6:"author";s:20:"WeEngine Team & ewei";s:3:"url";s:0:"";s:8:"settings";s:1:"2";s:10:"subscribes";a:0:{}s:7:"handles";a:1:{i:0;s:4:"text";}s:12:"isrulefields";s:1:"0";s:8:"issystem";s:1:"0";s:6:"target";s:1:"0";s:6:"iscard";s:1:"0";s:11:"permissions";s:2:"N;";s:7:"enabled";s:1:"1";s:6:"config";a:0:{}s:9:"isdisplay";i:1;}s:4:"core";a:5:{s:5:"title";s:24:"系统事件处理模块";s:4:"name";s:4:"core";s:8:"issystem";i:1;s:7:"enabled";i:1;s:9:"isdisplay";i:0;}}'),
+('accesstoken:1', 'a:2:{s:5:"token";s:138:"BMOnsiOyyg9M7kt8TWcotkyydVfxFr2314Zkys1DWBIrPFVqyuIPIW9M_rly7rx1z7ZCD9zFjVVOXJjyGwTJ1EjGpFSjk7XiUdkPgZw1_RrOB1i6nZndWvxpbByxOPHbAQJbAJAGWP";s:6:"expire";i:1475035484;}'),
+('stat:todaylock:1', 'a:1:{s:6:"expire";i:1477310285;}'),
+('upgrade', 'a:2:{s:7:"upgrade";b:0;s:10:"lastupdate";i:1478741963;}'),
 ('cloud:ad:uniaccount:list', 'a:2:{s:6:"expire";i:1473652417;s:7:"setting";N;}'),
 ('unicount:1', 's:1:"1";'),
 ('uniaccount:1', 'a:28:{s:4:"acid";s:1:"1";s:7:"uniacid";s:1:"1";s:5:"token";s:32:"ea0fn2ncfpngb4movfhrkribqjejueqw";s:12:"access_token";s:0:"";s:14:"encodingaeskey";s:43:"Ii9ri3IQZik6OQAmSudeXGY26vuz55jJx9Mp6Quu8mR";s:5:"level";s:1:"1";s:4:"name";s:9:"双木林";s:7:"account";s:11:"kissbin_zyb";s:8:"original";s:15:"gh_2bde2a4d784e";s:9:"signature";s:0:"";s:7:"country";s:0:"";s:8:"province";s:0:"";s:4:"city";s:0:"";s:8:"username";s:0:"";s:8:"password";s:0:"";s:10:"lastupdate";s:1:"0";s:3:"key";s:18:"wxf872698084f32897";s:6:"secret";s:32:"231cb685c30f91f2c288deecb3f522d8";s:7:"styleid";s:1:"1";s:12:"subscribeurl";s:0:"";s:18:"auth_refresh_token";s:0:"";s:12:"default_acid";s:1:"1";s:4:"type";s:1:"1";s:3:"uid";N;s:9:"starttime";N;s:7:"endtime";N;s:6:"groups";a:1:{i:1;a:5:{s:7:"groupid";s:1:"1";s:7:"uniacid";s:1:"1";s:5:"title";s:15:"默认会员组";s:6:"credit";s:1:"0";s:9:"isdefault";s:1:"1";}}s:10:"grouplevel";s:1:"0";}'),
 ('unisetting:1', 'a:23:{s:7:"uniacid";s:1:"1";s:8:"passport";a:3:{s:8:"focusreg";i:0;s:4:"item";s:5:"email";s:4:"type";s:8:"password";}s:5:"oauth";a:2:{s:6:"status";s:1:"0";s:7:"account";s:1:"0";}s:11:"jsauth_acid";s:1:"0";s:2:"uc";a:1:{s:6:"status";i:0;}s:6:"notify";a:1:{s:3:"sms";a:2:{s:7:"balance";i:0;s:9:"signature";s:0:"";}}s:11:"creditnames";a:5:{s:7:"credit1";a:2:{s:5:"title";s:6:"积分";s:7:"enabled";i:1;}s:7:"credit2";a:2:{s:5:"title";s:6:"余额";s:7:"enabled";i:1;}s:7:"credit3";a:2:{s:5:"title";s:0:"";s:7:"enabled";i:0;}s:7:"credit4";a:2:{s:5:"title";s:0:"";s:7:"enabled";i:0;}s:7:"credit5";a:2:{s:5:"title";s:0:"";s:7:"enabled";i:0;}}s:15:"creditbehaviors";a:2:{s:8:"activity";s:7:"credit1";s:8:"currency";s:7:"credit2";}s:7:"welcome";s:6:"关注";s:7:"default";s:0:"";s:15:"default_message";s:0:"";s:9:"shortcuts";s:0:"";s:7:"payment";a:4:{s:6:"credit";a:1:{s:6:"switch";b:0;}s:6:"alipay";a:4:{s:6:"switch";b:0;s:7:"account";s:0:"";s:7:"partner";s:0:"";s:6:"secret";s:0:"";}s:6:"wechat";a:5:{s:6:"switch";b:0;s:7:"account";b:0;s:7:"signkey";s:0:"";s:7:"partner";s:0:"";s:3:"key";s:0:"";}s:8:"delivery";a:1:{s:6:"switch";b:0;}}s:4:"stat";s:0:"";s:12:"default_site";s:1:"1";s:4:"sync";s:1:"1";s:8:"recharge";s:0:"";s:9:"tplnotice";s:0:"";s:10:"grouplevel";s:1:"0";s:8:"mcplugin";s:0:"";s:15:"exchange_enable";s:1:"0";s:11:"coupon_type";s:1:"0";s:7:"menuset";s:0:"";}'),
 ('defaultgroupid:1', 's:1:"1";'),
-('checkupgrade:system', 'a:1:{s:10:"lastupdate";i:1474879236;}');
+('checkupgrade:system', 'a:1:{s:10:"lastupdate";i:1478741963;}');
 
 -- --------------------------------------------------------
 
@@ -781,7 +781,9 @@ CREATE TABLE IF NOT EXISTS `zyb_core_sessions` (
 --
 
 INSERT INTO `zyb_core_sessions` (`sid`, `uniacid`, `openid`, `data`, `expiretime`) VALUES
-('88b43873e525750359f3d5f70a9ce98f', 1, 'oxmO9vmKXFSY30njvJsF4NXj2w9o', 'openid|s:28:"oxmO9vmKXFSY30njvJsF4NXj2w9o";', 1473671847);
+('88b43873e525750359f3d5f70a9ce98f', 1, 'oxmO9vmKXFSY30njvJsF4NXj2w9o', 'openid|s:28:"oxmO9vmKXFSY30njvJsF4NXj2w9o";', 1473671847),
+('39756a1abefdd9c0449fbedc3679b1b1', 1, 'oxmO9vgQ7a-_7pJylOe_3eUB0Lfc', 'openid|s:28:"oxmO9vgQ7a-_7pJylOe_3eUB0Lfc";', 1475032649),
+('6f6fa97548a583b679e31d4039a4412f', 1, '223.73.6.14', 'acid|s:1:"1";uniacid|i:1;token|a:4:{s:4:"ebt5";i:1475201843;s:4:"BYPs";i:1475201846;s:4:"AVxc";i:1475201859;s:4:"nOon";i:1475201866;}', 1475205466);
 
 -- --------------------------------------------------------
 
@@ -805,7 +807,7 @@ INSERT INTO `zyb_core_settings` (`key`, `value`) VALUES
 ('close', 'a:2:{s:6:"status";s:1:"0";s:6:"reason";s:0:"";}'),
 ('register', 'a:4:{s:4:"open";i:1;s:6:"verify";i:0;s:4:"code";i:1;s:7:"groupid";i:1;}'),
 ('site', 'a:5:{s:3:"key";s:5:"67240";s:5:"token";s:32:"ebozsgoc2jiavyk1popg5xuq5jno2eae";s:3:"url";s:27:"http://123.207.8.156/weixin";s:7:"version";s:3:"0.8";s:15:"profile_perfect";b:1;}'),
-('cloudip', 'a:2:{s:2:"ip";s:13:"123.206.1.158";s:6:"expire";i:1475080790;}');
+('cloudip', 'a:2:{s:2:"ip";s:14:"222.161.220.33";s:6:"expire";i:1478942346;}');
 
 -- --------------------------------------------------------
 
@@ -1445,14 +1447,15 @@ CREATE TABLE IF NOT EXISTS `zyb_mc_mapping_fans` (
   KEY `nickname` (`nickname`),
   KEY `updatetime` (`updatetime`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- 转存表中的数据 `zyb_mc_mapping_fans`
 --
 
 INSERT INTO `zyb_mc_mapping_fans` (`fanid`, `acid`, `uniacid`, `uid`, `openid`, `nickname`, `groupid`, `salt`, `follow`, `followtime`, `unfollowtime`, `tag`, `updatetime`, `unionid`) VALUES
-(1, 1, 1, 1, 'oxmO9vmKXFSY30njvJsF4NXj2w9o', '', '', 'NFdkSbBU', 1, 1473668247, 0, '', NULL, '');
+(1, 1, 1, 1, 'oxmO9vmKXFSY30njvJsF4NXj2w9o', '', '', 'NFdkSbBU', 1, 1473668247, 0, '', NULL, ''),
+(2, 0, 1, 2, '', '', '', '', 0, 0, 0, '', 1475200890, '');
 
 -- --------------------------------------------------------
 
@@ -1559,14 +1562,15 @@ CREATE TABLE IF NOT EXISTS `zyb_mc_members` (
   KEY `uniacid` (`uniacid`),
   KEY `email` (`email`),
   KEY `mobile` (`mobile`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- 转存表中的数据 `zyb_mc_members`
 --
 
 INSERT INTO `zyb_mc_members` (`uid`, `uniacid`, `mobile`, `email`, `password`, `salt`, `groupid`, `credit1`, `credit2`, `credit3`, `credit4`, `credit5`, `credit6`, `createtime`, `realname`, `nickname`, `avatar`, `qq`, `vip`, `gender`, `birthyear`, `birthmonth`, `birthday`, `constellation`, `zodiac`, `telephone`, `idcard`, `studentid`, `grade`, `address`, `zipcode`, `nationality`, `resideprovince`, `residecity`, `residedist`, `graduateschool`, `company`, `education`, `occupation`, `position`, `revenue`, `affectivestatus`, `lookingfor`, `bloodtype`, `height`, `weight`, `alipay`, `msn`, `taobao`, `site`, `bio`, `interest`) VALUES
-(1, 1, '', '57ae01a93c97e0347a2f8e58ece40557@we7.cc', '34bf1496f01846399a632746f056913e', 'BqBukWw7', 1, '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', 1473668063, '', '', '', '', 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+(1, 1, '', '57ae01a93c97e0347a2f8e58ece40557@we7.cc', '34bf1496f01846399a632746f056913e', 'BqBukWw7', 1, '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', 1473668063, '', '', '', '', 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(2, 1, '', '', '', '', 0, '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', 0, '', '', '', '', 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1726,7 +1730,7 @@ CREATE TABLE IF NOT EXISTS `zyb_modules` (
   `permissions` varchar(5000) NOT NULL,
   PRIMARY KEY (`mid`),
   KEY `idx_name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- 转存表中的数据 `zyb_modules`
@@ -1744,7 +1748,8 @@ INSERT INTO `zyb_modules` (`mid`, `name`, `type`, `title`, `version`, `ability`,
 (9, 'voice', 'system', '基本语音回复', '1.0', '提供语音回复', '在回复规则中可选择具有语音的回复内容，并根据用户所设置的特定关键字精准的返回给粉丝语音。', 'WeEngine Team', 'http://www.we7.cc/', 0, '', '', 1, 1, 0, 0, ''),
 (10, 'chats', 'system', '发送客服消息', '1.0', '公众号可以在粉丝最后发送消息的48小时内无限制发送消息', '', 'WeEngine Team', 'http://www.we7.cc/', 0, '', '', 0, 1, 0, 0, ''),
 (11, 'wxcard', 'system', '微信卡券回复', '1.0', '微信卡券回复', '微信卡券回复', 'WeEngine Team', 'http://www.we7.cc/', 0, '', '', 1, 1, 0, 0, ''),
-(12, 'paycenter', 'system', '收银台', '1.0', '收银台', '收银台', 'WeEngine Team', 'http://www.we7.cc/', 0, '', '', 1, 1, 0, 0, '');
+(12, 'paycenter', 'system', '收银台', '1.0', '收银台', '收银台', 'WeEngine Team', 'http://www.we7.cc/', 0, '', '', 1, 1, 0, 0, ''),
+(13, 'ewei_shopping', 'business', '微商城', '6.9.6', '微商城', '微商城', 'WeEngine Team & ewei', '', 2, 'a:0:{}', 'a:1:{i:0;s:4:"text";}', 0, 0, 0, 0, 'N;');
 
 -- --------------------------------------------------------
 
@@ -1766,7 +1771,23 @@ CREATE TABLE IF NOT EXISTS `zyb_modules_bindings` (
   `displayorder` tinyint(255) unsigned NOT NULL,
   PRIMARY KEY (`eid`),
   KEY `idx_module` (`module`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- 转存表中的数据 `zyb_modules_bindings`
+--
+
+INSERT INTO `zyb_modules_bindings` (`eid`, `module`, `entry`, `call`, `title`, `do`, `state`, `direct`, `url`, `icon`, `displayorder`) VALUES
+(1, 'ewei_shopping', 'cover', '', '商城入口设置', 'list', '', 0, '', '', 0),
+(2, 'ewei_shopping', 'menu', '', '订单管理', 'order', '', 0, '', '', 0),
+(3, 'ewei_shopping', 'menu', '', '商品管理', 'goods', '', 0, '', '', 0),
+(4, 'ewei_shopping', 'menu', '', '商品分类', 'category', '', 0, '', '', 0),
+(5, 'ewei_shopping', 'menu', '', '物流管理', 'express', '', 0, '', '', 0),
+(6, 'ewei_shopping', 'menu', '', '配送方式', 'dispatch', '', 0, '', '', 0),
+(7, 'ewei_shopping', 'menu', '', '幻灯片管理', 'adv', '', 0, '', '', 0),
+(8, 'ewei_shopping', 'menu', '', '维权与告警', 'notice', '', 0, '', '', 0),
+(9, 'ewei_shopping', 'home', '', '商城', 'list', '', 0, '', '', 0),
+(10, 'ewei_shopping', 'profile', '', '我的订单', 'myorder', '', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2044,6 +2065,329 @@ INSERT INTO `zyb_rule_keyword` (`id`, `rid`, `uniacid`, `module`, `content`, `ty
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `zyb_shopping_adv`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_adv` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `weid` int(11) DEFAULT '0',
+  `advname` varchar(50) DEFAULT '',
+  `link` varchar(255) DEFAULT '',
+  `thumb` varchar(255) DEFAULT '',
+  `displayorder` int(11) DEFAULT '0',
+  `enabled` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `indx_weid` (`weid`),
+  KEY `indx_enabled` (`enabled`),
+  KEY `indx_displayorder` (`displayorder`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_cart`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_cart` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `weid` int(10) unsigned NOT NULL,
+  `goodsid` int(11) NOT NULL,
+  `goodstype` tinyint(1) NOT NULL DEFAULT '1',
+  `from_user` varchar(50) NOT NULL,
+  `total` int(10) unsigned NOT NULL,
+  `optionid` int(10) DEFAULT '0',
+  `marketprice` decimal(10,2) DEFAULT '0.00',
+  PRIMARY KEY (`id`),
+  KEY `idx_openid` (`from_user`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_category`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_category` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `weid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '所属帐号',
+  `name` varchar(50) NOT NULL COMMENT '分类名称',
+  `thumb` varchar(255) NOT NULL COMMENT '分类图片',
+  `parentid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '上级分类ID,0为第一级',
+  `isrecommand` int(10) DEFAULT '0',
+  `description` varchar(500) NOT NULL COMMENT '分类介绍',
+  `displayorder` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
+  `enabled` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否开启',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_dispatch`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_dispatch` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `weid` int(11) DEFAULT '0',
+  `dispatchname` varchar(50) DEFAULT '',
+  `dispatchtype` int(11) DEFAULT '0',
+  `displayorder` int(11) DEFAULT '0',
+  `firstprice` decimal(10,2) DEFAULT '0.00',
+  `secondprice` decimal(10,2) DEFAULT '0.00',
+  `firstweight` int(11) DEFAULT '0',
+  `secondweight` int(11) DEFAULT '0',
+  `express` int(11) DEFAULT '0',
+  `enabled` int(11) NOT NULL DEFAULT '0',
+  `description` text,
+  PRIMARY KEY (`id`),
+  KEY `indx_weid` (`weid`),
+  KEY `indx_displayorder` (`displayorder`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_express`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_express` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `weid` int(11) DEFAULT '0',
+  `express_name` varchar(50) DEFAULT '',
+  `displayorder` int(11) DEFAULT '0',
+  `express_price` varchar(10) DEFAULT '',
+  `express_area` varchar(100) DEFAULT '',
+  `express_url` varchar(255) DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `indx_weid` (`weid`),
+  KEY `indx_displayorder` (`displayorder`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_feedback`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_feedback` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `weid` int(10) unsigned NOT NULL,
+  `openid` varchar(50) NOT NULL,
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '1为维权，2为告擎',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态0未解决，1用户同意，2用户拒绝',
+  `feedbackid` varchar(30) NOT NULL COMMENT '投诉单号',
+  `transid` varchar(30) NOT NULL COMMENT '订单号',
+  `reason` varchar(1000) NOT NULL COMMENT '理由',
+  `solution` varchar(1000) NOT NULL COMMENT '期待解决方案',
+  `remark` varchar(1000) NOT NULL COMMENT '备注',
+  `createtime` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_weid` (`weid`),
+  KEY `idx_feedbackid` (`feedbackid`),
+  KEY `idx_createtime` (`createtime`),
+  KEY `idx_transid` (`transid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_goods`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_goods` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `weid` int(10) unsigned NOT NULL,
+  `pcate` int(10) unsigned NOT NULL DEFAULT '0',
+  `ccate` int(10) unsigned NOT NULL DEFAULT '0',
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '1为实体，2为虚拟',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `displayorder` int(10) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(100) NOT NULL DEFAULT '',
+  `thumb` varchar(100) NOT NULL DEFAULT '',
+  `unit` varchar(5) NOT NULL DEFAULT '',
+  `description` varchar(1000) NOT NULL DEFAULT '',
+  `content` text NOT NULL,
+  `goodssn` varchar(50) NOT NULL DEFAULT '',
+  `productsn` varchar(50) NOT NULL DEFAULT '',
+  `marketprice` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `productprice` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `costprice` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `originalprice` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '原价',
+  `total` int(10) unsigned NOT NULL DEFAULT '0',
+  `totalcnf` int(11) DEFAULT '0' COMMENT '0 拍下减库存 1 付款减库存 2 永久不减',
+  `sales` int(10) unsigned NOT NULL DEFAULT '0',
+  `spec` varchar(5000) NOT NULL,
+  `createtime` int(10) unsigned NOT NULL,
+  `weight` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `credit` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `maxbuy` int(11) DEFAULT '0',
+  `usermaxbuy` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '用户最多购买数量',
+  `hasoption` int(11) DEFAULT '0',
+  `dispatch` int(11) DEFAULT '0',
+  `thumb_url` text,
+  `isnew` int(11) DEFAULT '0',
+  `ishot` int(11) DEFAULT '0',
+  `isdiscount` int(11) DEFAULT '0',
+  `isrecommand` int(11) DEFAULT '0',
+  `istime` int(11) DEFAULT '0',
+  `timestart` int(11) DEFAULT '0',
+  `timeend` int(11) DEFAULT '0',
+  `viewcount` int(11) DEFAULT '0',
+  `deleted` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_goods_option`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_goods_option` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `goodsid` int(10) DEFAULT '0',
+  `title` varchar(50) DEFAULT '',
+  `thumb` varchar(60) DEFAULT '',
+  `productprice` decimal(10,2) DEFAULT '0.00',
+  `marketprice` decimal(10,2) DEFAULT '0.00',
+  `costprice` decimal(10,2) DEFAULT '0.00',
+  `stock` int(11) DEFAULT '0',
+  `weight` decimal(10,2) DEFAULT '0.00',
+  `displayorder` int(11) DEFAULT '0',
+  `specs` text,
+  PRIMARY KEY (`id`),
+  KEY `indx_goodsid` (`goodsid`),
+  KEY `indx_displayorder` (`displayorder`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_goods_param`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_goods_param` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `goodsid` int(10) DEFAULT '0',
+  `title` varchar(50) DEFAULT '',
+  `value` text,
+  `displayorder` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `indx_goodsid` (`goodsid`),
+  KEY `indx_displayorder` (`displayorder`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_order`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_order` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `weid` int(10) unsigned NOT NULL,
+  `from_user` varchar(50) NOT NULL,
+  `ordersn` varchar(20) NOT NULL,
+  `price` varchar(10) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '-1取消状态，0普通状态，1为已付款，2为已发货，3为成功',
+  `sendtype` tinyint(1) unsigned NOT NULL COMMENT '1为快递，2为自提',
+  `paytype` tinyint(1) unsigned NOT NULL COMMENT '1为余额，2为在线，3为到付',
+  `transid` varchar(30) NOT NULL DEFAULT '0' COMMENT '微信支付单号',
+  `goodstype` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `remark` varchar(1000) NOT NULL DEFAULT '',
+  `address` varchar(1024) NOT NULL DEFAULT '' COMMENT '收货地址信息',
+  `expresscom` varchar(30) NOT NULL DEFAULT '',
+  `expresssn` varchar(50) NOT NULL DEFAULT '',
+  `express` varchar(200) NOT NULL DEFAULT '',
+  `goodsprice` decimal(10,2) DEFAULT '0.00',
+  `dispatchprice` decimal(10,2) DEFAULT '0.00',
+  `dispatch` int(10) DEFAULT '0',
+  `paydetail` varchar(255) NOT NULL COMMENT '支付详情',
+  `createtime` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_order_goods`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_order_goods` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `weid` int(10) unsigned NOT NULL,
+  `orderid` int(10) unsigned NOT NULL,
+  `goodsid` int(10) unsigned NOT NULL,
+  `price` decimal(10,2) DEFAULT '0.00',
+  `total` int(10) unsigned NOT NULL DEFAULT '1',
+  `optionid` int(10) DEFAULT '0',
+  `createtime` int(10) unsigned NOT NULL,
+  `optionname` text,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_product`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_product` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `goodsid` int(11) NOT NULL,
+  `productsn` varchar(50) NOT NULL,
+  `title` varchar(1000) NOT NULL,
+  `marketprice` decimal(10,0) unsigned NOT NULL,
+  `productprice` decimal(10,0) unsigned NOT NULL,
+  `total` int(11) NOT NULL,
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '1',
+  `spec` varchar(5000) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_goodsid` (`goodsid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_spec`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_spec` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `weid` int(10) unsigned NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `description` varchar(1000) NOT NULL,
+  `displaytype` tinyint(3) unsigned NOT NULL,
+  `content` text NOT NULL,
+  `goodsid` int(11) DEFAULT '0',
+  `displayorder` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zyb_shopping_spec_item`
+--
+
+CREATE TABLE IF NOT EXISTS `zyb_shopping_spec_item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `weid` int(11) DEFAULT '0',
+  `specid` int(11) DEFAULT '0',
+  `title` varchar(255) DEFAULT '',
+  `thumb` varchar(255) DEFAULT '',
+  `show` int(11) DEFAULT '0',
+  `displayorder` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `indx_weid` (`weid`),
+  KEY `indx_specid` (`specid`),
+  KEY `indx_show` (`show`),
+  KEY `indx_displayorder` (`displayorder`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `zyb_site_article`
 --
 
@@ -2280,7 +2624,7 @@ CREATE TABLE IF NOT EXISTS `zyb_stat_fans` (
   `date` varchar(8) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `uniacid` (`uniacid`,`date`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
 
 --
 -- 转存表中的数据 `zyb_stat_fans`
@@ -2305,7 +2649,33 @@ INSERT INTO `zyb_stat_fans` (`id`, `uniacid`, `new`, `cancel`, `cumulate`, `date
 (16, 1, 0, 0, 1, '20160914'),
 (17, 1, 0, 0, 1, '20160920'),
 (18, 1, 0, 0, 1, '20160919'),
-(19, 1, 0, 0, 1, '20160918');
+(19, 1, 0, 0, 1, '20160918'),
+(20, 1, 0, 0, 1, '20160927'),
+(21, 1, 0, 0, 1, '20160926'),
+(22, 1, 0, 0, 1, '20160925'),
+(23, 1, 0, 0, 1, '20160924'),
+(24, 1, 0, 0, 1, '20160923'),
+(25, 1, 0, 0, 1, '20160922'),
+(26, 1, 0, 0, 1, '20160921'),
+(27, 1, 0, 0, 1, '20160929'),
+(28, 1, 0, 0, 1, '20160928'),
+(29, 1, 0, 0, 1, '20161013'),
+(30, 1, 0, 0, 1, '20161012'),
+(31, 1, 0, 0, 1, '20161011'),
+(32, 1, 0, 0, 1, '20161010'),
+(33, 1, 0, 0, 1, '20161009'),
+(34, 1, 0, 0, 1, '20161008'),
+(35, 1, 0, 0, 1, '20161007'),
+(36, 1, 0, 0, 1, '20161019'),
+(37, 1, 0, 0, 1, '20161018'),
+(38, 1, 0, 0, 1, '20161017'),
+(39, 1, 0, 0, 1, '20161016'),
+(40, 1, 0, 0, 1, '20161015'),
+(41, 1, 0, 0, 1, '20161014'),
+(42, 1, 0, 0, 1, '20161023'),
+(43, 1, 0, 0, 1, '20161022'),
+(44, 1, 0, 0, 1, '20161021'),
+(45, 1, 0, 0, 1, '20161020');
 
 -- --------------------------------------------------------
 
@@ -2350,7 +2720,7 @@ CREATE TABLE IF NOT EXISTS `zyb_stat_msg_history` (
   `createtime` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_createtime` (`createtime`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `zyb_stat_msg_history`
@@ -2360,7 +2730,8 @@ INSERT INTO `zyb_stat_msg_history` (`id`, `uniacid`, `rid`, `kid`, `from_user`, 
 (1, 1, 0, 0, 'oxmO9vmKXFSY30njvJsF4NXj2w9o', '', '', 'unsubscrib', 1473668039),
 (2, 1, 0, 0, 'oxmO9vmKXFSY30njvJsF4NXj2w9o', '', 'a:2:{s:5:"scene";N;s:6:"ticket";N;}', 'subscribe', 1473668062),
 (3, 1, 0, 0, 'oxmO9vmKXFSY30njvJsF4NXj2w9o', '', '', 'unsubscrib', 1473668210),
-(4, 1, 9, 13, 'oxmO9vmKXFSY30njvJsF4NXj2w9o', 'basic', 'a:2:{s:5:"scene";N;s:6:"ticket";N;}', 'subscribe', 1473668247);
+(4, 1, 9, 13, 'oxmO9vmKXFSY30njvJsF4NXj2w9o', 'basic', 'a:2:{s:5:"scene";N;s:6:"ticket";N;}', 'subscribe', 1473668247),
+(5, 1, 0, 0, 'oxmO9vgQ7a-_7pJylOe_3eUB0Lfc', '', '', 'event', 1475029049);
 
 -- --------------------------------------------------------
 
@@ -2378,7 +2749,7 @@ CREATE TABLE IF NOT EXISTS `zyb_stat_rule` (
   PRIMARY KEY (`id`),
   KEY `idx_createtime` (`createtime`),
   KEY `rid` (`rid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `zyb_stat_rule`
@@ -2386,7 +2757,8 @@ CREATE TABLE IF NOT EXISTS `zyb_stat_rule` (
 
 INSERT INTO `zyb_stat_rule` (`id`, `uniacid`, `rid`, `hit`, `lastupdate`, `createtime`) VALUES
 (1, 1, 0, 1, 1473668062, 1473609600),
-(2, 1, 9, 1, 1473668247, 1473609600);
+(2, 1, 9, 1, 1473668247, 1473609600),
+(3, 1, 0, 1, 1475029049, 1474992000);
 
 -- --------------------------------------------------------
 
@@ -2464,7 +2836,7 @@ CREATE TABLE IF NOT EXISTS `zyb_uni_account_modules` (
   PRIMARY KEY (`id`),
   KEY `idx_module` (`module`),
   KEY `idx_uniacid` (`uniacid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `zyb_uni_account_modules`
@@ -2475,7 +2847,8 @@ INSERT INTO `zyb_uni_account_modules` (`id`, `uniacid`, `module`, `enabled`, `se
 (2, 1, 'news', 1, ''),
 (3, 1, 'music', 1, ''),
 (4, 1, 'userapi', 1, ''),
-(5, 1, 'recharge', 1, '');
+(5, 1, 'recharge', 1, ''),
+(6, 1, 'ewei_shopping', 1, '');
 
 -- --------------------------------------------------------
 
@@ -2515,7 +2888,7 @@ CREATE TABLE IF NOT EXISTS `zyb_uni_group` (
 --
 
 INSERT INTO `zyb_uni_group` (`id`, `name`, `modules`, `templates`, `uniacid`) VALUES
-(1, '体验套餐服务', 'N;', 'N;', 0);
+(1, '体验套餐服务', 'a:1:{i:0;s:13:"ewei_shopping";}', 'N;', 0);
 
 -- --------------------------------------------------------
 
@@ -2535,7 +2908,7 @@ CREATE TABLE IF NOT EXISTS `zyb_uni_settings` (
   `welcome` varchar(60) NOT NULL,
   `default` varchar(60) NOT NULL,
   `default_message` varchar(2000) NOT NULL,
-  `shortcuts` varchar(5000) NOT NULL,
+  `shortcuts` text NOT NULL,
   `payment` varchar(2000) NOT NULL,
   `stat` varchar(300) NOT NULL,
   `default_site` int(10) unsigned DEFAULT NULL,
@@ -2647,7 +3020,7 @@ CREATE TABLE IF NOT EXISTS `zyb_users` (
 --
 
 INSERT INTO `zyb_users` (`uid`, `groupid`, `username`, `password`, `salt`, `type`, `status`, `joindate`, `joinip`, `lastvisit`, `lastip`, `remark`, `starttime`, `endtime`) VALUES
-(1, 0, 'admin', 'ce1977ec205731768afa5d278f8937e224a8d4c8', 'a731c832', 0, 0, 1473401252, '', 1474879180, '223.73.6.127', '', 0, 0);
+(1, 0, 'admin', 'ce1977ec205731768afa5d278f8937e224a8d4c8', 'a731c832', 0, 0, 1473401252, '', 1478740740, '223.73.6.60', '', 0, 0);
 
 -- --------------------------------------------------------
 
