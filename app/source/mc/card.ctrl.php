@@ -4,7 +4,7 @@
  * WeEngine is NOT a free software, it under the license terms, visited http://www.we7.cc/ for more details.
  */
 defined('IN_IA') or exit('Access Denied');
-$dos = array('sign_display', 'sign', 'sign_record', 'notice', 'sign_strategy', 'share', 'mycard', 'add_recharge', 'addnums', 'recharge_record', 'receive_card', 'personal_info', 'consume');
+$dos = array('sign_display', 'sign', 'sign_record', 'notice', 'sign_strategy', 'share', 'mycard', 'add_recharge', 'addnums', 'recharge_record', 'receive_card', 'personal_info', 'consume', 'activity_description');
 $do = in_array($do, $dos) ? $do : 'mycard';
 load()->model('user');
 load()->model('card');

@@ -216,58 +216,42 @@ if($do == 'import') {
 		message($data['message'], referer(), 'error');
 	}
 	if (empty($begin)) {
-		pdo_delete('activity_stores', array('uniacid' => $_W['uniacid'], 'source' => 2));
+		pdo_update('activity_stores', array('status' => 3), array('uniacid' => $_W['uniacid'], 'source' => 2));
 	}
 	$location = $data['business_list'];
 	$status2local = array('', 3, 2, 1, 3);
 	if(!empty($location)) {
 		foreach($location as $row) {
 			$isexist = array();
-			$li = array();
-			$li = $row['base_info'];
-						if($li['available_state'] == 3) {
-								$isexist = pdo_getcolumn('activity_stores', array('uniacid' => $_W['uniacid'], 'location_id' => $li['poi_id']), 'id');
-				if(empty($isexist)) {
-					$li['uniacid'] = $_W['uniacid'];
-					$li['status'] = 1;
-					$li['location_id'] = $li['poi_id'];
-					$category_temp = explode(',', $li['categories'][0]);
-					$li['category'] = iserializer(array('cate' => $category_temp[0], 'sub' => $category_temp[1], 'clas' => $category_temp[2]));
-					$li['photo_list'] = iserializer($li['photo_list']);
-					if(empty($li['sid'])) {
-						unset($li['sid']);
-					}
-					$li['source'] = 2;
-					unset($li['categories'], $li['poi_id'], $li['update_status'], $li['available_state'], $li['sid'],$li['offset_type']);
-					pdo_insert('activity_stores', $li);
-				}
+			$store_info = array();
+			$store_info = $row['base_info'];
+									if(!empty($store_info['sid'])) {
+				$select_type = 'sid';
+				$isexist = pdo_getcolumn('activity_stores', array('uniacid' => $_W['uniacid'], 'id' => $store_info['sid']), 'id');
+			}
+			if(empty($isexist)) {
+				$select_type = 'poi_id';
+				$isexist = pdo_get('activity_stores', array('uniacid' => $_W['uniacid'], 'location_id' => $store_info['poi_id']));
+			}
+
+			$store_info['uniacid'] = $_W['uniacid'];
+			$store_info['status'] = $status2local[$store_info['available_state']];
+			$store_info['location_id'] = $store_info['poi_id'];
+			$category_temp = explode(',', $store_info['categories'][0]);
+			$store_info['category'] = iserializer(array('cate' => $category_temp[0], 'sub' => $category_temp[1], 'clas' => $category_temp[2]));
+			$store_info['photo_list'] = iserializer($store_info['photo_list']);
+			$store_info['source'] = 2;
+			$storeid = $select_type == 'poi_id' ? $store_info['poi_id'] : $store_info['sid'];
+			unset($store_info['categories'], $store_info['poi_id'], $store_info['update_status'], $store_info['available_state'],$store_info['offset_type'], $store_info['type'], $store_info['sid']);
+			if(empty($isexist)) {
+				pdo_insert('activity_stores', $store_info);
 			} else {
-				$select_type == 'sid';
-								if(!empty($li['sid'])) {
-					$isexist = pdo_getcolumn('activity_stores', array('uniacid' => $_W['uniacid'], 'id' => $li['sid']), 'id');
-				}
-				if(empty($isexist)) {
-					$select_type = 'location';
-					$isexist = pdo_get('activity_stores', array('uniacid' => $_W['uniacid'], 'location_id' => $li['poi_id']));
-				}
-				$li['uniacid'] = $_W['uniacid'];
-				$li['status'] = $status2local[$li['available_state']];
-				$li['location_id'] = $li['poi_id'];
-				$category_temp = explode(',', $li['categories'][0]);
-				$li['category'] = iserializer(array('cate' => $category_temp[0], 'sub' => $category_temp[1], 'clas' => $category_temp[2]));
-				$li['photo_list'] = iserializer($li['photo_list']);
-				$li['type'] = 2;
-				$li['source'] = 2;
-				unset($li['categories'], $li['poi_id'], $li['update_status'], $li['available_state'],$li['offset_type'], $li['sid'], $li['type']);
-				if(empty($isexist)) {
-					pdo_insert('activity_stores', $li);
+				if ($select_type == 'poi_id') {
+					$result = pdo_update('activity_stores', $store_info, array('uniacid' => $_W['uniacid'], 'location_id' => $storeid));
 				} else {
-					if($selet_type == 'sid') {
-						pdo_update('activity_stores', $li, array('uniacid' => $_W['uniacid'], 'id' => $li['sid']));
-					} else {
-						pdo_update('activity_stores', $li, array('uniacid' => $_W['uniacid'], 'location_id' => $li['poi_id']));
-					}
+					$result = pdo_update('activity_stores', $store_info, array('uniacid' => $_W['uniacid'], 'id' => $storeid));
 				}
+				$result = pdo_update('activity_stores', $store_info, array('uniacid' => $_W['uniacid'], 'id' => $storeid));
 			}
 		}
 		message('正在导入微信门店,请不要关闭浏览器...', url('activity/store/import', array('begin' => $begin + 50)), 'success');

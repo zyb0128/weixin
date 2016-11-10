@@ -192,11 +192,14 @@ function ijson_encode($value, $options = 0) {
 		return false;
 	}
 	if (version_compare(PHP_VERSION, '5.4.0', '<') && $options == JSON_UNESCAPED_UNICODE) {
-		$json_str = preg_replace("#\\\u([0-9a-f]{4})#ie", "iconv('UCS-2', 'UTF-8', pack('H4', '\\1'))", json_encode($value));
+		$str = json_encode($value);
+		$json_str = preg_replace_callback("#\\\u([0-9a-f]{4})#i", function($matchs){
+			return iconv('UCS-2BE', 'UTF-8', pack('H4', $matchs[1]));
+			}, $str);
 	} else {
 		$json_str = json_encode($value, $options);
 	}
-	return addcslashes($json_str, "\\\'\"");
+	return addslashes($json_str);
 }
 
 
@@ -334,7 +337,7 @@ function murl($segment, $params = array(), $noredirect = true, $addhost = false)
 }
 
 
-function pagination($total, $pageIndex, $pageSize = 15, $url = '', $context = array('before' => 5, 'after' => 4, 'ajaxcallback' => '')) {
+function pagination($total, $pageIndex, $pageSize = 15, $url = '', $context = array('before' => 5, 'after' => 4, 'ajaxcallback' => '', 'callbackfuncname' => '')) {
 	global $_W;
 	$pdata = array(
 		'tcount' => 0,
@@ -349,7 +352,11 @@ function pagination($total, $pageIndex, $pageSize = 15, $url = '', $context = ar
 	if ($context['ajaxcallback']) {
 		$context['isajax'] = true;
 	}
-
+	
+	if ($context['callbackfuncname']) {
+		$callbackfunc = $context['callbackfuncname'];
+	}
+	
 	$pdata['tcount'] = $total;
 	$pdata['tpage'] = (empty($pageSize) || $pageSize < 0) ? 1 : ceil($total / $pageSize);
 	if ($pdata['tpage'] <= 1) {
@@ -450,7 +457,7 @@ function tomedia($src, $local_path = false){
 	if (strexists($t, 'https://mmbiz.qlogo.cn') || strexists($t, 'http://mmbiz.qpic.cn')) {
 		return url('utility/wxcode/image', array('attach' => $src));
 	}
-	if (strexists($t, 'http://') || strexists($t, 'https://')) {
+	if (strexists($t, 'http://') || strexists($t, 'https://') || substr($t, 0, 2) == '//') {
 		return $src;
 	}
 	if ($local_path || empty($_W['setting']['remote']['type']) || file_exists(IA_ROOT . '/' . $_W['config']['upload']['attachdir'] . '/' . $src)) {
@@ -954,3 +961,4 @@ function strip_gpc($values, $type = 'g') {
 	}
 	return $values;
 }
+

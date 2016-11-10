@@ -8,6 +8,7 @@ $_W['page']['title'] = '卡券营销';
 load()->model('activity');
 load()->model('mc');
 load()->classs('coupon');
+set_time_limit(0);
 $dos = array('list', 'post', 'delete', 'get_member_num', 'checkcoupon');
 $do = in_array($do, $dos) ? $do : 'list';
 if ($do == 'checkcoupon') {

@@ -844,11 +844,10 @@ class WeiXinAccount extends WeAccount {
 		return $result;
 	}
 	
-	
 	public function isTagSupported() {
-		return 	!empty($this->account['key']) &&
-		!empty($this->account['secret']) &&
-		(intval($this->account['level']) > 2);
+		return (!empty($this->account['key']) &&
+		!empty($this->account['secret']) || $this->account['type'] == ACCOUNT_OAUTH_LOGIN) &&
+		(intval($this->account['level']) > ACCOUNT_SERVICE);
 	}
 	
 	
@@ -861,7 +860,7 @@ class WeiXinAccount extends WeAccount {
 			return $token;
 		}
 		$url = "https://api.weixin.qq.com/cgi-bin/tags/create?access_token={$token}";
-				$data = stripcslashes(ijson_encode(array('tag' => array('name' => $tagname)), JSON_UNESCAPED_UNICODE));
+				$data = stripslashes(ijson_encode(array('tag' => array('name' => $tagname)), JSON_UNESCAPED_UNICODE));
 		$result = $this->requestApi($url, $data);
 		return $result;
 	}
@@ -891,7 +890,7 @@ class WeiXinAccount extends WeAccount {
 			return $token;
 		}
 		$url = "https://api.weixin.qq.com/cgi-bin/tags/update?access_token={$token}";
-		$data = stripcslashes(ijson_encode(array('tag' => array('id' => $tagid, 'name' => $tagname)), JSON_UNESCAPED_UNICODE));
+		$data = stripslashes(ijson_encode(array('tag' => array('id' => $tagid, 'name' => $tagname)), JSON_UNESCAPED_UNICODE));
 		$result = $this->requestApi($url, $data);
 		return $result;
 	}
@@ -1058,7 +1057,7 @@ class WeiXinAccount extends WeAccount {
 		} elseif(!empty($result['errcode'])) {
 			return error(-1, "访问微信接口错误, 错误代码: {$result['errcode']}, 错误信息: {$result['errmsg']},错误详情：{$this->error_code($result['errcode'])}");
 		}
-		return $result;
+		return true;
 	}
 	
 	public function uploadMedia($path, $type = 'image') {

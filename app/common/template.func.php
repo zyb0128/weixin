@@ -371,7 +371,7 @@ function site_slide_search($params = array()) {
 		foreach($list as &$row) {
 			if (!strexists($row['url'], './')) {
 				if (!strexists($row['url'], 'http')) {
-					$row['url'] = $_W['sitescheme'] . $row['url'];
+					$row['url'] = '//' . $row['url'];
 				}
 			}
 			$row['thumb'] = tomedia($row['thumb']);
@@ -435,7 +435,7 @@ function site_quickmenu() {
 			$multiid = empty($site_multi_info) ? '' : $id;
 		} else {
 			if(!($_GPC['c'] == 'home' && $_GPC['a'] == 'page')){
-				isetcookie('__multiid', '');
+				@isetcookie('__multiid', '');
 			}
 		}
 		if (empty($multiid)) {

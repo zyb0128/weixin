@@ -74,7 +74,7 @@ function module_entries($name, $types = array(), $rid = 0, $args = null) {
 			load()->func('communication');
 			$urlset = parse_url($_W['siteurl']);
 			$urlset = pathinfo($urlset['path']);
-			$response = ihttp_request($_W['sitescheme']. '127.0.0.1/'. $urlset['dirname'] . '/' . url('utility/bindcall', array('modulename' => $bind['module'], 'callname' => $bind['call'], 'args' => $args, 'uniacid' => $_W['uniacid'])), array(), $extra);
+			$response = ihttp_request($_W['sitescheme'] . '127.0.0.1/'. $urlset['dirname'] . '/' . url('utility/bindcall', array('modulename' => $bind['module'], 'callname' => $bind['call'], 'args' => $args, 'uniacid' => $_W['uniacid'])), array(), $extra);
 			if (is_error($response)) {
 				continue;
 			}

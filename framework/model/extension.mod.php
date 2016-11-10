@@ -501,6 +501,7 @@ function ext_template_manifest_parse($xml) {
 }
 
 
+
 function ext_template_type() {
 	static $types = array(
 		'often' => array(
@@ -552,6 +553,7 @@ function ext_template_type() {
 }
 
 
+
 function ext_module_script_clean($modulename, $manifest) {
 	$moduleDir = IA_ROOT . '/addons/' . $modulename . '/';
 	$manifest['install'] = trim($manifest['install']);
@@ -571,6 +573,9 @@ function ext_module_script_clean($modulename, $manifest) {
 		if (file_exists($moduleDir . $manifest['upgrade'])) {
 			unlink($moduleDir . $manifest['upgrade']);
 		}
+	}
+	if (file_exists($moduleDir . 'manifest.xml')) {
+		unlink($moduleDir . 'manifest.xml');
 	}
 }
 
