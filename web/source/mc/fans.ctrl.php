@@ -105,7 +105,6 @@ if ($do == 'display') {
 		':uniacid' => $_W['uniacid'],
 		':acid' => $_W['acid'],
 	);
-	$sql = "SELECT f.* FROM " .tablename('mc_mapping_fans')." AS f";
 	$condition = " WHERE f.`uniacid` = :uniacid AND f.`acid` = :acid";
 	
 	if ($_GPC['type'] == 'bind') {
@@ -160,11 +159,11 @@ if ($do == 'display') {
 		}
 	}
 	if (!empty($_GPC['tag_selected_id'])) {
-		$sql .= " LEFT JOIN ".tablename('mc_fans_tag_mapping')." AS m ON m.`fanid` = f.`fanid`";
+		$join_tag_sql = " LEFT JOIN ".tablename('mc_fans_tag_mapping')." AS m ON m.`fanid` = f.`fanid`";
 		$condition .= " AND m.`tagid` = :tagid GROUP BY f.`fanid`";
 		$params[':tagid'] = $tag_selected_id = intval($_GPC['tag_selected_id']);
 	}
-	$list = pdo_fetchall($sql . $condition . $orderby . " LIMIT " . ($pindex - 1) * $psize . "," . $psize, $params);
+	$list = pdo_fetchall("SELECT f.* FROM " .tablename('mc_mapping_fans')." AS f" . $join_tag_sql . $condition . $orderby . " LIMIT " . ($pindex - 1) * $psize . "," . $psize, $params);
 	if (!empty($list)) {
 		foreach ($list as &$v) {
 			$v['tag_show'] = mc_show_tag($v['groupid']);
@@ -214,7 +213,7 @@ if ($do == 'display') {
 			unset($user,$niemmo,$niemmo_effective);
 		}
 	}
-	$total = pdo_fetchcolumn("SELECT COUNT(*) FROM " .tablename('mc_mapping_fans')." AS f" . $condition, $params);
+	$total = pdo_fetchcolumn("SELECT COUNT(*) FROM " .tablename('mc_mapping_fans')." AS f"  . $join_tag_sql . $condition, $params);
 	$pager = pagination($total, $pindex, $psize);
 	$fans['total'] = pdo_fetchcolumn('SELECT COUNT(*) FROM ' . tablename('mc_mapping_fans') . ' WHERE uniacid = :uniacid AND acid = :acid AND follow = 1', array(':uniacid' => $_W['uniacid'], ':acid' => $_W['acid']));
 }

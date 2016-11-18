@@ -323,6 +323,7 @@ class WeEngine {
 		if(!empty($fans)) {
 			if ($message['event'] == 'unsubscribe') {
 				pdo_update('mc_mapping_fans', array('follow' => 0, 'unfollowtime' => TIMESTAMP), array('fanid' => $fans['fanid']));
+				pdo_delete('mc_fans_tag_mapping', array('fanid' => $fans['fanid']));
 			} elseif ($message['event'] != 'ShakearoundUserShake' && $message['type'] != 'trace') {
 				$rec = array();
 				if (empty($fans['follow'])) {
@@ -799,7 +800,7 @@ EOF;
 			} else {
 				$params[] = array(
 					'message' => $this->message,
-					'module' => $df[$type]['module'],
+					'module' => is_array($df[$type]) ? $df[$type]['module'] : $df[$type],
 					'rule' => '-1',
 				);
 				return $params;
