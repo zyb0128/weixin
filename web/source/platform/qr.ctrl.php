@@ -200,7 +200,7 @@ if($do == 'display') {
 }
 
 if($do == 'delsata') {
-	$id = $_GPC['id'];
+	$id = intval($_GPC['id']);
 	$b = pdo_delete('qrcode_stat',array('id' =>$id, 'uniacid' => $_W['uniacid']));
 	if ($b){
 		message('删除成功',url('platform/qr/display'),'success');

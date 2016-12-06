@@ -310,16 +310,6 @@
 			<span class="help-block">请保证bucket为可公共读取的</span>
 		</div>
 	</div>
-	<div class="form-group" >
-		<label class="col-xs-12 col-sm-3 col-md-2 control-label">存储区域</label>
-		<div class="col-sm-9 col-xs-12">
-			<select class="form-control" name="qiniu[district]">
-				<option value="1" {if $remote['qiniu']['district'] == 1}selected{/if}>华东</option>
-				<option value="2" {if $remote['qiniu']['district'] == 2}selected{/if}>华北</option>
-			</select>
-			<span class="help-block">请查看bucket空间设置，并选择相应的存储区域。</span>
-		</div>
-	</div>
 	<div class="form-group">
 		<label class="col-xs-12 col-sm-3 col-md-2 control-label">Url</label>
 		<div class="col-sm-9 col-xs-12">

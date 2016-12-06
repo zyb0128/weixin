@@ -389,13 +389,6 @@ if($do == 'install') {
 		}
 	}
 	$module['permissions'] = iserializer($module['permissions']);
-	$module_subscribe_success = true;
-	if (!empty($module['subscribes'])) {
-		$subscribes = iunserializer($module['subscribes']);
-		if (!empty($subscribes)) {
-			$module_subscribe_success = ext_check_module_subscribe($module['name']);
-		}
-	}
 	if (!empty($info['version']['cloud_setting'])) {
 		$module['settings'] = 2;
 	}
@@ -426,6 +419,13 @@ if($do == 'install') {
 				$item['modules'][] = $module['name'];
 				$item['modules'] = iserializer($item['modules']);
 				pdo_update('uni_group', $item, array('id' => $post_group));
+			}
+		}
+		$module_subscribe_success = true;
+		if (!empty($module['subscribes'])) {
+			$subscribes = iunserializer($module['subscribes']);
+			if (!empty($subscribes)) {
+				$module_subscribe_success = ext_check_module_subscribe($module['name']);
 			}
 		}
 		load()->model('module');

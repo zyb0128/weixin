@@ -36,6 +36,7 @@ if ($do == 'subscribe') {
 }
 
 if ($do == 'check') {
+	$_W['uniacid'] = 1;
 	load()->classs('account');
 	$modulename = $_GPC['modulename'];
 	$obj = WeUtility::createModuleReceiver($modulename);
